@@ -1,0 +1,25 @@
+{
+  "full_name": "Full Name",
+  "full_name_placeholder": "Enter your full name",
+  "mail": "Email Address",
+  "mail_placeholder": "Enter your email addres",
+  "phone": "Phone",
+  "phone_placeholder": "xxx-xxx-xxxx",
+  "message": "Message",
+  "message_placeholder": "Type a message",
+  "select": "Required Service",
+  "select_placeholder": "Select Service",
+  "select_options": [
+    { "key": "Safety", "value": "safety" },
+    { "key": "Security", "value": "security" },
+    { "key": "Data Keeping", "value": "data-keeping" }
+  ],
+  "submit": "Send Message",
+  "read_more": "Get Started Now",
+  "anything_else": "Anything else?",
+  "contact_message_placeholder": "Your message here...",
+  "page_not_found": "Page Not Found",
+  "page_not_found_content": "Oops! It looks like you've taken a wrong turn. Let's get you back on track. Try searching for what you're looking for using the search bar above.",
+  "back_to_home": "Go Back Home",
+  "get_started": "Get Started for Free"
+}

@@ -1,0 +1,53 @@
+---
+import { markdownify } from "@/lib/utils/textConverter";
+import ImageMod from "../ImageMod.astro";
+
+const { value } = Astro.props;
+---
+
+<section class="section pt-0">
+  <div class="container md:w-3/4 lg:1/2 xl:w-full">
+    <div class="row justify-center g-5">
+      <div class="col-12 lg:col-10">
+        <h2
+          set:html={markdownify(value.title)}
+          class="text-center"
+          data-aos="fade-up-sm"
+        />
+        <p
+          set:html={markdownify(value.content)}
+          class="text-center xl:w-1/2 mx-auto text-balance"
+          data-aos="fade-up-sm"
+        />
+      </div>
+      <div class="col-12">
+        <div class="row gy-4 justify-center">
+          {
+            value.points.map((p: any, index: number) => (
+              <div
+                class="col-12 md:col-6 xl:col-4"
+                data-aos="fade-up-sm"
+                data-aos-delay={50 + index * 100}
+              >
+                <div class="flex flex-col justify-center text-center">
+                  <div class="bg-primary rounded-full p-4 w-fit mx-auto mb-6">
+                    <ImageMod
+                      src={p.image}
+                      alt=""
+                      width={32}
+                      height={32}
+                      format="svg"
+                      class=""
+                    />
+                  </div>
+                  <h4 set:html={markdownify(p.title)} class="mb-2" />
+                  <p set:html={markdownify(p.content)} class="text-balance" />
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

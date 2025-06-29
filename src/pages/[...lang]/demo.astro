@@ -1,0 +1,69 @@
+---
+import ContactForm from "@/components/ContactForm.astro";
+import Faq from "@/components/Faq.astro";
+import Hero from "@/components/features/Hero.astro";
+import Base from "@/layouts/Base.astro";
+import { getListPage } from "@/lib/contentParser.astro";
+import { supportedLang } from "@/lib/utils/languageParser";
+import { markdownify } from "@/lib/utils/textConverter";
+import type { ContentEntryMap } from "astro:content";
+import { GoArrowRight } from "react-icons/go";
+
+export function getStaticPaths() {
+  const paths = supportedLang.map((lang) => ({
+    params: { lang: lang || undefined },
+  }));
+  return paths;
+}
+
+const { lang } = Astro.params;
+const demoIndex = await getListPage("demo", lang as keyof ContentEntryMap);
+const { title, meta_title, description, hero } = demoIndex[0].data;
+
+const featureIndex = await getListPage(
+  "features",
+  lang as keyof ContentEntryMap
+);
+---
+
+<Base title={title} meta_title={meta_title} description={description}>
+  <section class="section">
+    <div class="container md:w-3/4 lg:1/2 xl:w-full">
+      <div class="row justify-between gy-4">
+        <div class="col-12 xl:col-4 min-h-full">
+          <div class="flex flex-col justify-between h-full">
+            <div class="mb-6">
+              <h1
+                set:html={markdownify(hero.title)}
+                class="text-[32px] md:text-[48px] lg:text-[64px] mb-6"
+                data-aos="fade-up-sm"
+              />
+              <p set:html={markdownify(hero.content)} data-aos="fade-up-sm" />
+            </div>
+            <ul>
+              {
+                hero.points.map((point: any, index: number) => (
+                  <li
+                    class="bg-light p-4 rounded-2xl mb-2 w-full flex items-center text-sm"
+                    data-aos="fade-left-sm"
+                    data-aos-delay={50 + index * 100}
+                  >
+                    <span class="mr-2 inline-block bg-primary p-2 rounded-full text-text-light w-fit h-fit">
+                      <GoArrowRight />{" "}
+                    </span>
+                    {point}
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+        <div class="col-12 xl:col-7">
+          <ContactForm lang={lang} />
+        </div>
+      </div>
+    </div>
+  </section>
+  <Hero hero={featureIndex[0].data.hero} titleBg={false} />
+  <Faq />
+</Base>

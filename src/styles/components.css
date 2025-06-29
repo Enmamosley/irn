@@ -1,0 +1,200 @@
+/* section style */
+.section {
+  @apply py-24 xl:py-28;
+}
+.section-sm {
+  @apply py-16 xl:py-20;
+}
+
+/* container */
+.container {
+  @apply mx-auto !max-w-[1260px] px-4;
+}
+
+/* social icons */
+.social-icons {
+  @apply space-x-4;
+}
+.social-icons li {
+  @apply inline-block;
+}
+.social-icons li a {
+  @apply flex h-9 w-9 items-center justify-center rounded bg-primary text-center leading-9 text-white;
+}
+.social-icons li a svg {
+  @apply h-5 w-5;
+}
+
+/* notice */
+.notice {
+  @apply mb-6 rounded-lg border px-8 py-6;
+}
+.notice.note {
+  @apply text-[#1B83E2];
+  @apply border-current;
+}
+.notice.tip {
+  @apply text-[#40D294];
+  @apply border-current;
+}
+.notice.info {
+  @apply text-[#E3A72C];
+  @apply border-current;
+}
+.notice.warning {
+  @apply text-[#DB2C23];
+  @apply border-current;
+}
+.notice-head {
+  @apply flex items-center;
+}
+.notice-head svg {
+  @apply mr-3;
+}
+.notice-head p {
+  @apply font-secondary text-xl font-semibold text-text-gray;
+}
+.notice-body {
+  @apply mt-3;
+}
+.notice-body p {
+  @apply my-0;
+}
+
+/* tab */
+.tab {
+  @apply overflow-hidden rounded-lg border border-border;
+}
+.tab-nav {
+  @apply flex border-b border-border bg-light;
+  @apply m-0!;
+  @apply list-none!;
+}
+
+.tab-nav-item {
+  @apply cursor-pointer  border-border py-2 text-lg text-text-gray opacity-80;
+  @apply my-0!;
+  @apply px-8!;
+}
+
+.tab-nav-item.active {
+  @apply border-b-[3px] border-primary opacity-100;
+}
+.tab-content-panel {
+  @apply p-8;
+}
+.tab-content-panel p {
+  @apply mb-0;
+}
+.tab-content-panel.active {
+  @apply block;
+}
+
+/* accordion */
+.accordion-container {
+  @apply overflow-hidden;
+}
+.accordion {
+  @apply bg-body border-x first:border-t first:rounded-t-[20px] border-b border-border last:rounded-b-[20px];
+}
+
+.accordion-header {
+  @apply px-5 py-6 flex w-full cursor-pointer items-center justify-between font-semibold text-xl text-left text-balance;
+}
+.accordion-header span {
+  @apply w-11/12;
+}
+.accordion-header svg {
+  @apply h-[22px] w-[22px] transition-transform duration-300;
+}
+
+.accordion-content {
+  @apply p-0 w-full lg:w-3/4 h-0 overflow-hidden opacity-0 transition-all duration-300 ease-in-out text-text/80;
+}
+.accordion.active .accordion-icon {
+  @apply rotate-45;
+}
+.accordion.active .accordion-content {
+  @apply px-5 pb-8 h-auto opacity-100 transition-all ease-in-out duration-300;
+}
+
+/* modal */
+.modal {
+  @apply fixed inset-0 z-40 hidden h-full w-full overflow-auto;
+}
+.modal-overlay {
+  @apply fixed inset-0 z-40 hidden h-full w-full bg-black/40;
+}
+.modal-content {
+  @apply relative top-1/2 z-50 mx-auto max-w-[90%] -translate-y-1/2 rounded-lg bg-body p-8;
+}
+.modal-close {
+  @apply absolute right-3 top-3 h-8 w-8 rounded-full bg-light text-center leading-8 text-text-gray;
+}
+
+/* content style */
+.content {
+  @apply prose max-w-none;
+  @apply prose-headings:mb-[1.2em] prose-headings:mt-[1.5em];
+  @apply prose-h1:text-h1-sm md:prose-h1:text-h1;
+  @apply prose-h2:text-h2-sm md:prose-h2:text-h2;
+  @apply prose-h3:text-h3-sm md:prose-h3:text-h3;
+  @apply prose-img:w-full prose-img:rounded-2xl;
+  @apply prose-hr:border-border;
+  @apply prose-p:text-base prose-p:text-text;
+  @apply prose-blockquote:rounded-2xl prose-blockquote:border prose-blockquote:border-l-[10px] prose-blockquote:border-primary prose-blockquote:bg-light prose-blockquote:px-8 prose-blockquote:py-10 prose-blockquote:font-secondary prose-blockquote:text-2xl prose-blockquote:not-italic;
+  @apply prose-pre:rounded-2xl prose-pre:bg-light;
+  @apply prose-code:px-1 prose-code:text-primary;
+  @apply prose-strong:font-bold;
+  @apply prose-a:text-text prose-a:underline hover:prose-a:text-primary;
+  @apply prose-li:text-text marker:text-primary;
+  @apply prose-table:relative prose-table:overflow-hidden prose-table:rounded-2xl prose-table:before:absolute prose-table:before:left-0 prose-table:before:top-0 prose-table:before:h-full prose-table:before:w-full prose-table:before:rounded-[inherit] prose-table:before:border prose-table:before:content-[""];
+  @apply prose-thead:border-border prose-thead:bg-light;
+  @apply prose-th:relative prose-th:z-10 prose-th:px-4 prose-th:py-[18px];
+  @apply prose-tr:border-border;
+  @apply prose-td:relative prose-td:z-10 prose-td:px-3 prose-td:py-[18px];
+}
+
+.deal-image {
+  position: absolute;
+  top: -84%;
+  right: 20%;
+  transform-origin: center;
+  animation: rotateDeal 2s ease-in-out infinite;
+}
+
+@keyframes rotateDeal {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.image-card {
+  @apply rounded-[20px] p-2 shadow border border-[#ffffff4d];
+}
+
+/* video */
+.video-container {
+  @apply relative overflow-hidden rounded-2xl;
+}
+
+.video-thumbnail {
+  @apply w-full h-full object-cover rounded-2xl brightness-75;
+}
+
+.play-button {
+  @apply w-auto bg-text-light rounded-xl px-7 pt-7 pb-6 shadow absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer;
+}
+.play-button svg {
+  @apply w-8 size-full mx-auto mb-2;
+}
+
+.video-player {
+  @apply absolute top-0 left-0 w-full h-full hidden transition-opacity duration-500 ease-in-out;
+}

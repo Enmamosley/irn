@@ -1,0 +1,57 @@
+---
+import { markdownify } from "@/lib/utils/textConverter";
+import ImageMod from "../ImageMod.astro";
+
+const { team } = Astro.props;
+---
+
+<section class="">
+  <div class="container md:w-3/4 lg:1/2 xl:w-full">
+    <div class="row">
+      <div class="col-12">
+        <h2
+          set:html={markdownify(team.title)}
+          class="text-center mb-6"
+          data-aos="fade-up-sm"
+        />
+        <p
+          set:html={markdownify(team.content)}
+          class="lg:w-1/2 mx-auto text-lg text-balance text-center mb-14"
+          data-aos="fade-up-sm"
+        />
+      </div>
+
+      <div class="col-12">
+        <div class="row g-4 justify-center">
+          {
+            team.members.map((m: any, index: number) => (
+              <div
+                class="col-12 md:col-6 lg:col-4 xl:col-3"
+                data-aos="fade-up-sm"
+                data-aos-delay={50 + index * 100}
+              >
+                <div class="mx-auto w-fit flex flex-col justify-center">
+                  <div class="rounded-lg md:h-[383px] overflow-hidden mb-4">
+                    <ImageMod
+                      width={0}
+                      height={0}
+                      src={m.avatar}
+                      alt={m.name}
+                      class="w-full h-full object-cover hover:rotate-2 hover:scale-105 transition-all ease-in-out duration-500"
+                      format="webp"
+                    />
+                  </div>
+
+                  <div class="text-center md:text-left">
+                    <p class="text-lg font-medium">{m.name}</p>
+                    <p class="text-text/60">{m.designation}</p>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

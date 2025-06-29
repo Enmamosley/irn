@@ -1,0 +1,37 @@
+---
+import Experience from "@/components/about/Experience.astro";
+import Hero from "@/components/about/Hero.astro";
+import Team from "@/components/about/Team.astro";
+import Value from "@/components/about/Value.astro";
+import Base from "@/layouts/Base.astro";
+import { getListPage, getSinglePage } from "@/lib/contentParser.astro";
+import { supportedLang } from "@/lib/utils/languageParser";
+import Testimonial from "@/partials/Testimonial.astro";
+import type { ContentEntryMap } from "astro:content";
+
+export function getStaticPaths() {
+  const paths = supportedLang.map((lang) => ({
+    params: { lang: lang || undefined },
+  }));
+  return paths;
+}
+
+const { lang } = Astro.params;
+const aboutIndex = await getListPage("about", lang as keyof ContentEntryMap);
+const { title, meta_title, description, hero, value, experience, team } =
+  aboutIndex[0].data;
+
+const testimonial = await getSinglePage(
+  "testimonialSection",
+  lang as keyof ContentEntryMap,
+  "testimonial"
+);
+---
+
+<Base title={title} meta_title={meta_title} description={description}>
+  <Hero {hero} />
+  <Value {value} />
+  <Experience {experience} />
+  <Team {team} />
+  <Testimonial {testimonial} />
+</Base>

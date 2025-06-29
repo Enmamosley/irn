@@ -1,0 +1,55 @@
+---
+import BlogCard from "@/components/BlogCard.astro";
+import Base from "@/layouts/Base.astro";
+import { getListPage, getSinglePage } from "@/lib/contentParser.astro";
+import { supportedLang } from "@/lib/utils/languageParser";
+import { markdownify } from "@/lib/utils/textConverter";
+import type { ContentEntryMap } from "astro:content";
+
+export function getStaticPaths() {
+  const paths = supportedLang.map((lang) => ({
+    params: { lang: lang || undefined },
+  }));
+  return paths;
+}
+const { lang } = Astro.params;
+
+const postIndex = await getListPage("blog", lang as keyof ContentEntryMap);
+const { title, meta_title, description, hero } = postIndex[0].data;
+
+const posts = await getSinglePage("blog", lang as keyof ContentEntryMap);
+---
+
+<Base title={title} meta_title={meta_title} description={description}>
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1
+            set:html={markdownify(hero?.title!)}
+            class="text-center text-[32px] md:text-[48px] lg:text-[64px] mb-6"
+            data-aos="fade-up-sm"
+          />
+        </div>
+        <div class="col-12">
+          <p
+            set:html={markdownify(hero?.content!)}
+            class="text-center lg:w-1/2 mx-auto mb-14"
+            data-aos="fade-up-sm"
+          />
+        </div>
+        <div class="col-12">
+          <div class="row g-4">
+            {
+              posts.map((post, index) => (
+                <div class="col-12 md:col-6 xl:col-4 min-h-full">
+                  <BlogCard data={post} index={index} />
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

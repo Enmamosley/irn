@@ -1,0 +1,90 @@
+---
+import Counter from "@/helpers/Counter";
+import { markdownify } from "@/lib/utils/textConverter";
+import ImageMod from "../ImageMod.astro";
+
+const { experience } = Astro.props;
+---
+
+<section class="section pt-0">
+  <div class="container md:w-3/4 lg:1/2 xl:w-full">
+    <h2
+      set:html={markdownify(experience.title)}
+      class="mb-8 text-center"
+      data-aos="fade-up-sm"
+    />
+
+    <div class="row justify-center">
+      <div class="col-12" data-aos="fade-up-sm">
+        <div class="flex flex-wrap xl:flex-nowrap gap-6 justify-center w-full">
+          <div
+            class="w-full xl:w-1/3 min-h-full flex flex-col md:flex-row xl:flex-col justify-between gap-6"
+            data-aos="fade-up-sm"
+          >
+            <ImageMod
+              src={experience.cards[0].image}
+              alt="Sapick Advantage"
+              width={364}
+              height={300}
+              class="object-cover w-full md:w-1/2 xl:w-full rounded-2xl"
+            />
+            <div
+              class="bg-light rounded-2xl flex flex-col p-8 w-full md:w-1/2 xl:w-full h-auto"
+              data-aos="fade-up-sm"
+            >
+              <h3>
+                <Counter
+                  className="mb-2 text-primary"
+                  count={experience.cards[2].value}
+                  duration={0.8}
+                  suffix={experience.cards[2].suffix}
+                  client:load
+                />
+              </h3>
+              <p class="mb-6">{experience.cards[2].title}</p>
+              <p>{experience.cards[2].content}</p>
+            </div>
+          </div>
+
+          <ImageMod
+            src={experience.cards[1].image}
+            alt="Sapick Advantage"
+            width={364}
+            height={557}
+            class="object-cover w-full xl:w-1/3 rounded-2xl"
+            data-aos="fade-up-sm"
+          />
+
+          <div
+            class="w-full xl:w-1/3 min-h-full flex flex-col md:flex-row xl:flex-col justify-between gap-6"
+            data-aos="fade-up-sm"
+          >
+            <div
+              class="bg-light rounded-2xl flex flex-col p-8 w-full md:w-1/2 xl:w-full h-auto"
+            >
+              <h3>
+                <Counter
+                  className="mb-2 text-primary"
+                  count={experience.cards[3].value}
+                  duration={0.8}
+                  suffix={experience.cards[3].suffix}
+                  client:load
+                />
+              </h3>
+              <p class="mb-6">{experience.cards[3].title}</p>
+              <p>{experience.cards[3].content}</p>
+            </div>
+            <ImageMod
+              src={experience.cards[4].image}
+              alt="Sapick Advantage"
+              width={364}
+              height={312}
+              class="object-cover w-full md:w-1/2 xl:w-full rounded-2xl"
+              data-aos="fade-up-sm"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

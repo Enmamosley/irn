@@ -1,0 +1,54 @@
+---
+import {
+  getLangFromUrl,
+  getTranslations,
+  slugSelector,
+} from "@/lib/utils/languageParser";
+import { markdownify } from "@/lib/utils/textConverter";
+import type { ContentEntryMap } from "astro:content";
+import { HiOutlineArrowRight } from "react-icons/hi2";
+import ImageMod from "./ImageMod.astro";
+
+const { data, index } = Astro.props;
+const { title, image } = data.data;
+
+const lang = getLangFromUrl(Astro.url);
+
+const { read_more } = await getTranslations(lang as keyof ContentEntryMap);
+
+const slugParts = data.id.split("/");
+slugParts[0] = "blog";
+const modifiedSlug = slugParts.join("/");
+data.id = modifiedSlug;
+---
+
+<div
+  data-aos="fade-up-sm"
+  data-aos-delay={index * 100}
+  class="relative flex flex-col justify-between bg-light h-full p-4 rounded-2xl group"
+>
+  <div>
+    {
+      image && (
+        <div class="rounded-xl overflow-hidden mb-5">
+          <ImageMod
+            class="w-full object-cover group-hover:scale-105 transition-all duration-300 aspect-[371/244]"
+            src={image}
+            alt={title}
+            width={371}
+            height={244}
+            format="webp"
+          />
+        </div>
+      )
+    }
+    <h4 class="mb-6" set:html={markdownify(title)} />
+  </div>
+  <a
+    class="stretched-link flex items-center gap-2 text-text/70"
+    href={slugSelector(`/${data.id}`, lang)}
+  >
+    {read_more}
+    <HiOutlineArrowRight />
+  </a>
+</div>

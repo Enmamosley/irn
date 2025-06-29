@@ -1,0 +1,37 @@
+---
+import Benefits from "@/components/features/Benefits.astro";
+import Hero from "@/components/features/Hero.astro";
+import More from "@/components/features/More.astro";
+import Trust from "@/components/features/Trust.astro";
+import Feature from "@/components/home/Feature.astro";
+import Base from "@/layouts/Base.astro";
+import { getListPage } from "@/lib/contentParser.astro";
+import { supportedLang } from "@/lib/utils/languageParser";
+import type { ContentEntryMap } from "astro:content";
+
+export function getStaticPaths() {
+  const paths = supportedLang.map((lang) => ({
+    params: { lang: lang || undefined },
+  }));
+  return paths;
+}
+
+const { lang } = Astro.params;
+const featureIndex = await getListPage(
+  "features",
+  lang as keyof ContentEntryMap
+);
+const { title, meta_title, description, hero, benefit, trust, more } =
+  featureIndex[0].data;
+
+const homepage = await getListPage("homepage", lang as keyof ContentEntryMap);
+const { feature } = homepage[0].data;
+---
+
+<Base title={title} meta_title={meta_title} description={description}>
+  <Hero {hero} />
+  <Benefits {benefit} />
+  <Feature {feature} />
+  <Trust {trust} />
+  <More {more} />
+</Base>

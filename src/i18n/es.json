@@ -1,0 +1,25 @@
+{
+  "full_name": "Nombre Completo",
+  "full_name_placeholder": "Ingresa tu nombre completo",
+  "mail": "Dirección de Correo Electrónico",
+  "mail_placeholder": "Ingresa tu dirección de correo electrónico",
+  "phone": "Teléfono",
+  "phone_placeholder": "xxx-xxx-xxxx",
+  "message": "Mensaje",
+  "message_placeholder": "Escribe un mensaje",
+  "select": "Servicio Requerido",
+  "select_placeholder": "Selecciona el Servicio",
+  "select_options": [
+    { "key": "Seguridad", "value": "safety" },
+    { "key": "Seguridad", "value": "security" },
+    { "key": "Conservación de Datos", "value": "data-keeping" }
+  ],
+  "submit": "Enviar Mensaje",
+  "read_more": "Comienza Ahora",
+  "anything_else": "¿Algo más?",
+  "contact_message_placeholder": "Tu mensaje aquí...",
+  "page_not_found": "Página No Encontrada",
+  "page_not_found_content": "¡Ups! Parece que tomaste un camino equivocado. Vamos a orientarte. Intenta buscar lo que estás buscando usando la barra de búsqueda de arriba.",
+  "back_to_home": "Volver al Inicio",
+  "get_started": "Comienza Gratis"
+}

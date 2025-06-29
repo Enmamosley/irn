@@ -1,0 +1,61 @@
+---
+import Faq from "@/components/Faq.astro";
+import More from "@/components/features/More.astro";
+import Compare from "@/components/pricing/Compare.astro";
+import Plan from "@/components/pricing/Plan";
+import Base from "@/layouts/Base.astro";
+import { getListPage, getSinglePage } from "@/lib/contentParser.astro";
+import { getLangFromUrl, supportedLang } from "@/lib/utils/languageParser";
+import TestimonialSlider from "@/partials/TestimonialSlider.astro";
+import type { ContentEntryMap } from "astro:content";
+
+export function getStaticPaths() {
+  const paths = supportedLang.map((lang) => ({
+    params: { lang: lang || undefined },
+  }));
+  return paths;
+}
+const { lang } = Astro.params;
+
+const language = lang || getLangFromUrl(Astro.url);
+
+// pricing
+const pricingIndex = await getListPage(
+  "pricing",
+  lang as keyof ContentEntryMap
+);
+const { title, meta_title, description, pricing_plans } = pricingIndex[0].data;
+
+// plan
+const plan = (
+  await getSinglePage("planSection", lang as keyof ContentEntryMap, "plan")
+)[0];
+
+// features
+const featureIndex = await getListPage(
+  "features",
+  lang as keyof ContentEntryMap
+);
+const { more } = featureIndex[0].data;
+
+// testimonial
+const testimonial = await getSinglePage(
+  "testimonialSection",
+  lang as keyof ContentEntryMap,
+  "testimonial"
+);
+---
+
+<Base title={title} meta_title={meta_title} description={description}>
+  <Plan {plan} lang={language as string} client:only="react" />
+  <More {more} />
+  <Compare
+    title={pricing_plans.title}
+    subtitle={pricing_plans.subtitle}
+    plans={pricing_plans.plans}
+    categories={pricing_plans.categories}
+  />
+
+  <TestimonialSlider {testimonial} />
+  <Faq />
+</Base>

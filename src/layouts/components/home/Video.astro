@@ -1,0 +1,123 @@
+---
+import Counter from "@/helpers/Counter";
+import { markdownify } from "@/lib/utils/textConverter";
+import ImageMod from "../ImageMod.astro";
+import ThreeDot from "../ThreeDot.astro";
+
+const { video } = Astro.props;
+---
+
+<div class="relative overflow-hidden bg-primary" data-aos="fade-in">
+  <ImageMod
+    src="/images/homepage/patternBg.png"
+    alt="pattern"
+    class="absolute top-0 left-0 z-10 object-cover w-full h-full"
+    width={0}
+    height={0}
+  />
+  <div
+    class="absolute flex-none w-[440px] h-[769px] left-[calc(45.62500000000002%-220px)] top-14 bg-gradient-to-r from-[#ffe74b] to-[rgb(255,231,75)] rounded-[769px] blur-[100px] opacity-15 z-1 overflow-visible rotate-[35deg]"
+  >
+  </div>
+
+  <section class="section relative z-20">
+    <div class="container">
+      <div
+        class="row justify-center xl:justify-between items-end mb-11 md:w-3/4 lg:1/2 xl:w-full mx-auto"
+      >
+        <div class="col-12 md:col-12 xl:col-7">
+          <ThreeDot className="mb-6 max-xl:justify-center" data-aos="fade-in" />
+          <h2
+            set:html={markdownify(video.title)}
+            class="text-text-light max-xl:text-center text-balance max-xl:mb-4"
+            data-aos="fade-right"
+          />
+        </div>
+        <div class="col-12 md:col-9 xl:col-5" data-aos="fade-left">
+          <p
+            set:html={markdownify(video.content)}
+            class="text-text-light text-lg max-xl:text-center"
+          />
+        </div>
+      </div>
+
+      <div
+        class="mx-auto p-2 shadow rounded-[20px] border border-[#ffffff36] mb-28"
+        data-aos="zoom-in"
+      >
+        <div class="video-container">
+          <ImageMod
+            src="/images/homepage/video/video-cover.png"
+            alt="Thumbnail"
+            class="video-thumbnail"
+            width={1100}
+            height={492}
+            loading={"eager"}
+          />
+          <div class="play-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="var(--token-834413c1-7886-40c2-905d-025892d495c7, rgb(0, 88, 67))"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              ><polygon points="5 3 19 12 5 21 5 3"></polygon></svg
+            >
+
+            <p>Watch how it works</p>
+          </div>
+
+          <video
+            class="overflow-hidden rounded-lg object-cover video-player"
+            width="full"
+            height={550}
+            controls
+            autoplay
+          >
+            <source src="/videos/video.mp4" type="video/mp4" />
+            "Demo video"
+          </video>
+        </div>
+      </div>
+
+      <div class="row g-5 justify-between px-14">
+        {
+          video.stats.map((stat: any, i: number) => (
+            <div
+              class="col-12 md:col-6 xl:col-3 text-text-light"
+              data-aos="fade-up"
+              data-aos-delay={i * 100}
+            >
+              <h1 class="flex justify-center items-center mb-4">
+                {stat.prefix && <span set:html={markdownify(stat.prefix)} />}
+                <span>
+                  <Counter count={stat.value} duration={5} client:load />
+                </span>
+                {stat.suffix && <span set:html={markdownify(stat.suffix)} />}
+              </h1>
+              <p
+                set:html={markdownify(stat.key)}
+                class="text-center text-base"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const videoContainer = document.querySelector(".video-container");
+    const playButton = document.querySelector(".play-button");
+    const videoPlayer = document.querySelector(".video-player");
+
+    playButton?.addEventListener("click", () => {
+      (videoPlayer as HTMLVideoElement).style.display = "block";
+      (videoContainer as HTMLDivElement).style.backgroundImage = "none";
+    });
+  });
+</script>

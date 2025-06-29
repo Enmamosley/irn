@@ -1,0 +1,45 @@
+---
+import config from "@/config/config.json";
+
+const { announcement_bar } = config;
+---
+
+{
+  announcement_bar.enable && (
+    <div class="relative announcement-bar px-10 py-4 bg-primary text-center text-text-light">
+      <p>{announcement_bar.text}</p>
+      <button
+        aria-label="Close"
+        class="absolute right-[1%] top-1/2 translate-y-[-50%]"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          stroke="#fff"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          style="width:100%;height:100%"
+        >
+          <slot>
+            <circle cx="12" cy="12" r="10" />
+            <path d="m15 9-6 6M9 9l6 6" />
+          </slot>
+        </svg>
+      </button>
+    </div>
+  )
+}
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const announcementBar = document.querySelector(".announcement-bar");
+    const closeButton = document.querySelector(".announcement-bar button");
+
+    closeButton?.addEventListener("click", () => {
+      announcementBar?.classList.add("hidden");
+    });
+  });
+</script>

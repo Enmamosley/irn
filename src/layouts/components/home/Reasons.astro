@@ -1,0 +1,23 @@
+---
+import { markdownify } from "@/lib/utils/textConverter";
+import ThreeDot from "../ThreeDot.astro";
+import ReasonSlide from "./ReasonSlide.astro";
+
+const { reason } = Astro.props;
+---
+
+<section class="section">
+  <div class="container md:w-3/4 lg:1/2 xl:w-full">
+    <ThreeDot className="mb-10 max-xl:justify-center" data-aos="fade-up" />
+    <h2
+      set:html={markdownify(reason.title)}
+      class="mb-14 max-xl:text-center"
+      data-aos="fade-right"
+    />
+    <div
+      class="flex flex-col xl:flex-row max-xl:gap-8 items-center justify-between"
+    >
+      <ReasonSlide points={reason.points} />
+    </div>
+  </div>
+</section>

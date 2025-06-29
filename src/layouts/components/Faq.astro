@@ -1,0 +1,137 @@
+---
+import { getSinglePage } from "@/lib/contentParser.astro";
+import { getLangFromUrl, slugSelector } from "@/lib/utils/languageParser";
+import { markdownify } from "@/lib/utils/textConverter";
+import Button from "@/shortcodes/Button";
+import type { ContentEntryMap } from "astro:content";
+
+const { className } = Astro.props;
+
+let lang = getLangFromUrl(Astro.url);
+
+const faqIndex = await getSinglePage(
+  "faqSection",
+  lang as keyof ContentEntryMap,
+  "faq"
+);
+
+const { title_1, title_2, faqs, contact } = faqIndex[0].data;
+---
+
+<section class={`${className} section relative overflow-hidden`}>
+  <div class="container">
+    <div class="row justify-center">
+      <div class="col-12 mb-14">
+        <h2
+          set:html={markdownify(title_1)}
+          class="mb-2 text-center"
+          data-aos="fade-up-sm"
+        />
+        <h2
+          set:html={markdownify(title_2)}
+          class="text-center"
+          data-aos="fade-up-sm"
+        />
+      </div>
+      <div class="col-12 lg:col-9 xl:col-10 mb-14">
+        <div class="accordion-container">
+          {
+            faqs.map((f: any, index: number) => (
+              <div
+                class={"accordion" + (index === 0 ? " active" : "")}
+                data-aos="fade-up-sm"
+                data-aos-delay={50 + index * 100}
+              >
+                <button class="accordion-header" data-accordion>
+                  <span set:html={markdownify(f.question)} />
+                  <svg
+                    class="accordion-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                  >
+                    <path
+                      fill="#101010"
+                      d="m11 0 1.556 9.444L22 11l-9.444 1.556L11 22l-1.556-9.444L0 11l9.444-1.556z"
+                      opacity=".5"
+                    />
+                  </svg>
+                </button>
+                <div class="accordion-content">
+                  <p>{f.answer}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+      <div class="col-12">
+        <div
+          class="flex justify-center items-center flex-col md:flex-row gap-6"
+        >
+          <p
+            set:html={markdownify(contact.title)}
+            class="text-lg text-center"
+          />
+          <Button
+            link={slugSelector(contact.button.link, lang)}
+            label={contact.button.label}
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- gradient background -->
+    <div
+      class="aspect-[2.433/1] w-[51%] h-[300px] absolute left-1/2 top-[194px] -translate-x-1/2 opacity-15 overflow-visible -z-10"
+      style="transform: translateX(-50%) rotate(-141deg);"
+    >
+      <!-- Violet blob -->
+      <div
+        class="absolute left-[329px] -top-[296px] -bottom-[756px] w-[305px] rounded-full bg-[#a5a2ff] blur-[162px]"
+        style="transform: rotate(-80deg); animation: move-blob 10s infinite ease-in-out;"
+      >
+      </div>
+
+      <!-- Green blob -->
+      <div
+        class="absolute left-[200px] top-[200px] w-[41%] h-[521px] rounded-full bg-[#29c775] blur-[162px]"
+        style="transform: rotate(100deg); animation: move-blob 10s infinite ease-in-out 2s;"
+      >
+      </div>
+
+      <!-- Yellow blob -->
+      <div
+        class="absolute -right-[40px] -top-[160px] w-[49%] h-[625px] rounded-full bg-[#ffe74b] blur-[162px]"
+        style="transform: rotate(-80deg); animation: move-blob 10s infinite ease-in-out 4s;"
+      >
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("astro:page-load", () => {
+      const accordionContainer = document.querySelector(".accordion-container");
+      const accordionHeaders = document.querySelectorAll("[data-accordion]");
+
+      accordionHeaders.forEach((header) => {
+        header.addEventListener("click", () => {
+          const clickedItem = header.parentElement;
+
+          // Close all other accordion items
+          const allAccordionItems =
+            accordionContainer?.querySelectorAll(".accordion");
+          allAccordionItems?.forEach((item) => {
+            if (item !== clickedItem && item.classList.contains("active")) {
+              item.classList.remove("active");
+            }
+          });
+
+          // Toggle the clicked item
+          if (clickedItem) {
+            clickedItem.classList.toggle("active");
+          }
+        });
+      });
+    });
+  </script>
+</section>

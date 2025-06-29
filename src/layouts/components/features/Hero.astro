@@ -1,0 +1,42 @@
+---
+import TitleBg from "@/components/TitleBg.astro";
+import { getLangFromUrl } from "@/lib/utils/languageParser";
+import { markdownify } from "@/lib/utils/textConverter";
+import Feature from "./Feature";
+const { hero, titleBg = true } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+---
+
+<div class="relative overflow-hidden">
+  <section
+    class="section pb-0"
+    style={{
+      background: !titleBg
+        ? "linear-gradient(rgb(249, 249, 249) 0%, rgb(255, 255, 255) 36%)"
+        : "none",
+    }}
+  >
+    <div class="container md:w-3/4 lg:1/2 xl:w-full">
+      <div class="row justify-center mb-14">
+        <div class="col-12 lg:col-10">
+          <p
+            set:html={markdownify(hero.title)}
+            class="text-center page-title mb-6"
+            data-aos="fade-up-sm"
+          />
+          <div class="w-2/3 mx-auto text-center">
+            <p
+              set:html={markdownify(hero.content)}
+              class="text-xl"
+              data-aos="fade-up-sm"
+            />
+          </div>
+        </div>
+      </div>
+
+      <Feature features={hero.features} lang={lang} client:only="react" />
+    </div>
+  </section>
+  {titleBg && <TitleBg />}
+</div>

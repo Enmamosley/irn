@@ -1,0 +1,240 @@
+---
+import { getLangFromUrl, slugSelector } from "@/lib/utils/languageParser";
+import { Icon } from "astro-icon/components";
+import { MdSubdirectoryArrowRight } from "react-icons/md";
+
+interface PricingFrontmatter {
+  title: string;
+  subtitle: string;
+  plans: { name: string }[];
+  categories: {
+    name: string;
+    features: {
+      name: string;
+      tooltip: boolean;
+      values: (boolean | string)[];
+    }[];
+  }[];
+}
+
+const { title, subtitle, plans, categories } =
+  Astro.props as PricingFrontmatter;
+
+const lang = getLangFromUrl(Astro.url);
+---
+
+<section class="section pt-0">
+  <div class="container md:w-11/12 xl:w-full">
+    <div class="text-center mb-8" data-aos="fade-up-sm">
+      <h2 class="mb-2">{title}</h2>
+      <p class="text-text-gray-600">{subtitle}</p>
+    </div>
+
+    <div class="hidden lg:block overflow-x-auto">
+      <table class="w-full border-collapse overflow-hidden">
+        <thead>
+          <tr>
+            <th class="p-4 text-left font-medium text-text-gray-500"></th>
+            {
+              plans.map((plan, index) => (
+                <th
+                  class="p-4 text-center font-bold"
+                  data-aos="fade-up-sm"
+                  data-aos-delay={50 + index * 50}
+                >
+                  {plan.name}
+                </th>
+              ))
+            }
+          </tr>
+        </thead>
+
+        <tbody>
+          {
+            categories.map((category, index) => (
+              <>
+                <tr class="!mt-10 first:!mt-0 float-start">
+                  <td
+                    colspan={plans.length + 1}
+                    class="p-4 font-bold text-primary"
+                    data-aos="fade-up-sm"
+                    data-aos-delay={50 + index * 50}
+                  >
+                    {category.name}
+                  </td>
+                </tr>
+                {category.features.map((feature, featureIndex) => (
+                  <tr
+                    class="hover:bg-slate-50 odd:bg-slate-50"
+                    data-aos="fade-up-sm"
+                    data-aos-delay={50 + featureIndex * 50}
+                  >
+                    <td class="p-4 text-left">
+                      <div class="flex items-center gap-2">
+                        <span class="text-sm text-text-gray-900">
+                          {feature.name}
+                        </span>
+                        {feature.tooltip && (
+                          <div class="group relative">
+                            <Icon
+                              name="help"
+                              class="w-4 h-4 text-text-gray-400"
+                            />
+                            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-slate-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                              More information about {feature.name}
+                              <div class="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-text-gray-900" />
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </td>
+                    {feature.values.map((value, valueIndex) => (
+                      <td
+                        class="p-4 text-center"
+                        data-aos="zoom-in-sm"
+                        data-aos-delay={50 + valueIndex * 50}
+                      >
+                        {typeof value === "boolean" ? (
+                          value ? (
+                            <span class="text-green-500">
+                              <Icon name="check" class="w-5 h-5 mx-auto" />
+                            </span>
+                          ) : (
+                            <span class="text-text-gray-300">
+                              <Icon name="minus" class="w-5 h-5 mx-auto" />
+                            </span>
+                          )
+                        ) : (
+                          <span class="text-sm text-text-gray-900">
+                            {value}
+                          </span>
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </>
+            ))
+          }
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <td class="p-4 text-left font-medium text-text-gray-500"></td>
+            {
+              plans.map((_, index) => (
+                <td>
+                  <a
+                    href={slugSelector("/contact", lang)}
+                    class="btn btn-primary flex items-center w-fit mx-auto justify-center mt-14"
+                    data-aos="fade-up-sm"
+                    data-aos-delay={50 + index * 100}
+                  >
+                    <svg
+                      class="mr-3"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                    >
+                      <path d="m15 10 5 5-5 5" />
+                      <path d="M4 4v7a4 4 0 0 0 4 4h12" />
+                    </svg>{" "}
+                    Select This Plan
+                  </a>
+                </td>
+              ))
+            }
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <!-- Mobile View -->
+    <div class="lg:hidden space-y-8">
+      {
+        plans.map((plan, planIndex) => (
+          <div
+            class="rounded-lg"
+            data-aos="fade-up-sm"
+            data-aos-delay={50 + planIndex * 100}
+          >
+            <div class="pt-6">
+              <h3 class="text-2xl font-bold text-center mb-2">{plan.name}</h3>
+            </div>
+
+            {categories.map((category) => (
+              <div class="py-6" data-aos="fade-up-sm">
+                <h4 class="font-bold text-primary mb-4">{category.name}</h4>
+                <div class="">
+                  {category.features.map((feature) => (
+                    <div
+                      class="odd:bg-slate-50 flex items-center justify-between px-6 py-5"
+                      data-aos="fade-up-sm"
+                    >
+                      <div class="flex items-center gap-2">
+                        <span class="text-sm text-text-gray-900">
+                          {feature.name}
+                        </span>
+                        {feature.tooltip && (
+                          <div class="group relative">
+                            <Icon
+                              name="help"
+                              class="w-4 h-4 text-text-gray-400"
+                            />
+                            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-slate-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                              More information about {feature.name}
+                              <div class="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-slate-900" />
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                      <div>
+                        {typeof feature.values[planIndex] === "boolean" ? (
+                          feature.values[planIndex] ? (
+                            <Icon name="check" class="w-5 h-5 mx-auto" />
+                          ) : (
+                            <Icon name="minus" class="w-5 h-5 mx-auto" />
+                          )
+                        ) : (
+                          <span class="text-sm text-text-gray-900">
+                            {feature.values[planIndex]}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+
+            <a
+              href={slugSelector("/contact", lang)}
+              class="btn btn-primary flex items-center w-fit mx-auto justify-center"
+              data-aos="fade-up-sm"
+            >
+              <MdSubdirectoryArrowRight className="mr-3" /> Select {plan.name}
+            </a>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .tooltip {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .tooltip-trigger:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+</style>

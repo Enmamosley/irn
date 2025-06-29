@@ -1,0 +1,85 @@
+---
+import ImageMod from "@/components/ImageMod.astro";
+import Base from "@/layouts/Base.astro";
+import { getListPage } from "@/lib/contentParser.astro";
+import {
+  getLangFromUrl,
+  slugSelector,
+  supportedLang,
+} from "@/lib/utils/languageParser";
+import { markdownify } from "@/lib/utils/textConverter";
+import type { ContentEntryMap } from "astro:content";
+
+export function getStaticPaths() {
+  const paths = supportedLang.map((lang) => ({
+    params: { lang: lang || undefined },
+  }));
+  return paths;
+}
+const lang = getLangFromUrl(Astro.url);
+
+const integrationIndex = await getListPage(
+  "integration",
+  lang as keyof ContentEntryMap
+);
+const { title, meta_title, description, hero, integrations } =
+  integrationIndex[0].data;
+---
+
+<Base title={title} meta_title={meta_title} description={description}>
+  <section class="section">
+    <div class="container md:w-3/4 lg:1/2 xl:w-full">
+      <h1
+        set:html={markdownify(hero.title)}
+        class="text-center text-[32px] md:text-[48px] lg:text-[64px] mb-6"
+        data-aos="fade-up-sm"
+      />
+      <p
+        set:html={markdownify(hero.content)}
+        class="text-center lg:w-1/2 mx-auto mb-14"
+        data-aos="fade-up-sm"
+      />
+      <div class="row g-4 justify-center">
+        {
+          integrations.map((i: any, index: number) => (
+            <div
+              class="col-12 lg:col-6 xl:col-4 min-h-full"
+              data-aos="zoom-in-sm"
+              data-aos-delay={50 + index * 100}
+            >
+              <div class="bg-light p-6 rounded-2xl flex flex-col justify-between h-full">
+                <div class="p-2 mb-3 rounded-full bg-body w-fit">
+                  <ImageMod
+                    width={42}
+                    height={42}
+                    src={i.icon}
+                    alt={i.app}
+                    class=""
+                  />
+                </div>
+                <p
+                  set:html={markdownify(i.app)}
+                  class="font-medium text-xl mb-2.5"
+                />
+                <p
+                  set:html={markdownify(i.content)}
+                  class="mb-4 text-text/80"
+                />
+                {i.button.enable && (
+                  <a
+                    href={slugSelector(i.button.link, lang as string)}
+                    class="btn btn-ghost w-fit"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {i.button.label}
+                  </a>
+                )}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Base>

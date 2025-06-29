@@ -1,0 +1,100 @@
+---
+import { getLangFromUrl, slugSelector } from "@/lib/utils/languageParser";
+import { markdownify } from "@/lib/utils/textConverter";
+import Button from "@/shortcodes/Button";
+import { Icon } from "astro-icon/components";
+import Card from "../Card.astro";
+import ImageMod from "../ImageMod.astro";
+import ThreeDot from "../ThreeDot.astro";
+
+const lang = getLangFromUrl(Astro.url);
+
+const { feature } = Astro.props;
+---
+
+<section class="section overflow-hidden">
+  <div class="container md:w-3/4 lg:1/2 xl:w-full">
+    {
+      feature.map((item: any, i: number) => (
+        <div class="flex flex-col xl:flex-row max-xl:gap-y-10 justify-between items-center mb-24 last:mb-0">
+          <div
+            class={`w-[100%] xl:w-[48%] min-h-full ${
+              i % 2 !== 0 && "xl:order-2"
+            }`}
+            data-aos={i % 2 === 0 ? "fade-right-sm" : "fade-left-sm"}
+            data-aos-delay={i * 100}
+          >
+            {item.images.length === 1 ? (
+              <Card>
+                <div class="h-full bg-light">
+                  <div class="h-1/3 w-auto p-8 md:p-20">
+                    <ImageMod
+                      src={item.images[0]}
+                      width={0}
+                      height={0}
+                      alt="feature"
+                      class="flex justify-center items-center object-contain image-card relative z-10"
+                    />
+                  </div>
+                </div>
+              </Card>
+            ) : (
+              <Card className="bg-light">
+                <div class="h-full  relative">
+                  <div class="p-8 md:p-20">
+                    <ImageMod
+                      src={item.images[0]}
+                      width={0}
+                      height={0}
+                      alt="feature"
+                      class="max-md:mb-4 flex justify-center items-center object-contain image-card relative z-10"
+                    />
+                    <ImageMod
+                      src={item.images[1]}
+                      width={0}
+                      height={0}
+                      alt="feature"
+                      class="max-md:mb-4 max-md:w-full max-md:mx-auto md:w-[40%] md:absolute image-card md:z-20 md:top-1/2 md:right-5 md:transform md:-translate-y-1/2"
+                    />
+                    <ImageMod
+                      src={item.images[2]}
+                      width={0}
+                      height={0}
+                      alt="feature"
+                      class="max-md:w-full max-md:mx-auto md:w-[25%] md:absolute image-card md:z-20 md:bottom-5 md:right-5"
+                    />
+                  </div>
+                </div>
+              </Card>
+            )}
+          </div>
+
+          <div
+            class={`w-[100%] xl:w-[47%] ${i % 2 !== 0 && "order-1"}`}
+            data-aos="fade-up-sm"
+          >
+            <ThreeDot className="mb-6" />
+            <h2 set:html={markdownify(item.title)} class="mb-6" />
+            <p set:html={markdownify(item.content)} class="mb-10 text-lg" />
+
+            <ul class="mb-10">
+              {item.features.map((feature: any) => (
+                <li class="mb-4 last:mb-0 flex items-center font-medium text-xl">
+                  <span class="mr-2 inline-block p-1 border border-text text-primary rounded-full">
+                    <Icon name="arrow-right" />
+                  </span>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+            <Button
+              link={slugSelector(item.button.link, lang)}
+              label={item.button.label}
+              icon={true}
+            />
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

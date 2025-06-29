@@ -1,0 +1,80 @@
+---
+title: "Sobre Nosotros"
+meta_title: "esta es la página sobre nosotros"
+description: "esta es la meta descripción"
+hero:
+  title: "Estamos en una misión"
+  content: "En Sapick, creemos que gestionar tus finanzas debe ser sencillo y empoderador. Fundados con la misión de simplificar la gestión financiera."
+  image_1: "/images/about/1.png"
+  image_2: "/images/about/2.png"
+  trust:
+    title: "Confiado por miles de empresas en todo el mundo"
+    business:
+      - "/images/homepage/clients/1.svg"
+      - "/images/homepage/clients/2.svg"
+      - "/images/homepage/clients/3.svg"
+      - "/images/homepage/clients/4.svg"
+      - "/images/homepage/clients/5.svg"
+
+value:
+  title: "Nuestros Valores"
+  content: "Aquí hay un eslogan atractivo que respalda el título principal mientras agrega un poco más de información."
+  points:
+    - title: "Innovación"
+      content: "Mejorando e innovando continuamente nuestras soluciones para mantenerse a la vanguardia de las amenazas cibernéticas."
+      image: "/images/about/value_1.svg"
+    - title: "Integridad"
+      content: "Manteniendo los más altos estándares de honestidad y transparencia en todas nuestras transacciones."
+      image: "/images/about/value_2.svg"
+    - title: "Enfoque en el Cliente"
+      content: "Mejorando e innovando continuamente nuestras soluciones para mantenerse a la vanguardia de las amenazas cibernéticas."
+      image: "/images/about/value_3.svg"
+
+experience:
+  title: "Experimenta la Ventaja de Sapick"
+  cards:
+    - type: "image"
+      image: "/images/about/exp_1.png"
+    - type: "image"
+      image: "/images/about/exp_2.png"
+    - type: "info"
+      value: 50
+      suffix: "M"
+      title: "Usuarios a Nivel Mundial"
+      content: "Gestiona transacciones en efectivo un 70% más eficientemente usando sus herramientas avanzadas."
+    - type: "info"
+      value: 90
+      suffix: "%"
+      title: "Reducir Errores"
+      content: "Gestiona transacciones en efectivo un 70% más eficientemente usando sus herramientas avanzadas."
+    - type: "image"
+      image: "/images/about/exp_3.png"
+team:
+  title: "Conoce a Nuestro Asombroso Equipo"
+  content: "Descubre las Poderosas Características que Hacen de Sonata la Solución SaaS Definitiva para Escalar tu Negocio"
+  members:
+    - name: "Cameron Williamson"
+      designation: "Jefe de diseño"
+      avatar: "/images/team/1.png"
+    - name: "Brooklyn Simmons"
+      designation: "Co - Fundadora, CEO"
+      avatar: "/images/team/2.png"
+    - name: "Guy Hawkins"
+      designation: "Jefe de desarrollo"
+      avatar: "/images/team/3.png"
+    - name: "Leslie Alexander"
+      designation: "Diseño UI/UX"
+      avatar: "/images/team/4.png"
+    - name: "Robert Fox"
+      designation: "Desarrollador Web"
+      avatar: "/images/team/5.png"
+    - name: "Kristin Watson"
+      designation: "Diseñadora UI/UX"
+      avatar: "/images/team/6.png"
+    - name: "Marvin McKinney"
+      designation: "Diseñador UI/UX"
+      avatar: "/images/team/7.png"
+    - name: "Kathryn Murphy"
+      designation: "Diseñadora UI/UX"
+      avatar: "/images/team/8.png"
+---

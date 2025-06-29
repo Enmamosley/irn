@@ -1,0 +1,80 @@
+---
+title: "About Us"
+meta_title: "this is about us page"
+description: "this is meta description"
+hero:
+  title: "We’re on a mission"
+  content: "At Sapick, we believe that managing your finances should be effortless and empowering. Founded with a mission to simplify financial management."
+  image_1: "/images/about/1.png"
+  image_2: "/images/about/2.png"
+  trust:
+    title: "Trusted by thousands of business worldwide"
+    business:
+      - "/images/homepage/clients/1.svg"
+      - "/images/homepage/clients/2.svg"
+      - "/images/homepage/clients/3.svg"
+      - "/images/homepage/clients/4.svg"
+      - "/images/homepage/clients/5.svg"
+
+value:
+  title: "Our Values"
+  content: "Here’s a catchy tagline that supports the headline above while adding a little extra information."
+  points:
+    - title: "Innovation"
+      content: "Continuously improving and innovating our solutions to stay ahead of cyber threats."
+      image: "/images/about/value_1.svg"
+    - title: "Integrity"
+      content: "Upholding the highest standards of honesty and transparency in all our dealings."
+      image: "/images/about/value_2.svg"
+    - title: "Customer-Centric"
+      content: "Continuously improving and innovating our solutions to stay ahead of cyber threats."
+      image: "/images/about/value_3.svg"
+
+experience:
+  title: "Experience the Sapick Advantage"
+  cards:
+    - type: "image"
+      image: "/images/about/exp_1.png"
+    - type: "image"
+      image: "/images/about/exp_2.png"
+    - type: "info"
+      value: 50
+      suffix: "M"
+      title: "World-wide Users"
+      content: "Handle cash transactions 70% more efficiently using it’s advanced tools."
+    - type: "info"
+      value: 90
+      suffix: "%"
+      title: "Reduce Errors"
+      content: "Handle cash transactions 70% more efficiently using it’s advanced tools."
+    - type: "image"
+      image: "/images/about/exp_3.png"
+team:
+  title: "Meet Our Awesome Team"
+  content: "Discover the Powerful Features That Make Sonata the Ultimate SaaS Solution for Scaling Your Business"
+  members:
+    - name: "Cameron Williamson"
+      designation: "Head of design"
+      avatar: "/images/team/1.png"
+    - name: "Brooklyn Simmons"
+      designation: "Co - Founder, CEO"
+      avatar: "/images/team/2.png"
+    - name: "Guy Hawkins"
+      designation: "Head of development"
+      avatar: "/images/team/3.png"
+    - name: "Leslie Alexander"
+      designation: "UI/UX  Design"
+      avatar: "/images/team/4.png"
+    - name: "Robert Fox"
+      designation: "Web Developer"
+      avatar: "/images/team/5.png"
+    - name: "Kristin Watson"
+      designation: "UI/UX  Designer"
+      avatar: "/images/team/6.png"
+    - name: "Marvin McKinney"
+      designation: "UI/UX  Designer"
+      avatar: "/images/team/7.png"
+    - name: "Kathryn Murphy"
+      designation: "UI/UX  Designer"
+      avatar: "/images/team/8.png"
+---

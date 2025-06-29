@@ -1,0 +1,41 @@
+@utility bg-gradient {
+  @apply bg-gradient-to-b from-[rgba(249,249,249,1)] from-[0.53%] to-white to-[83.28%];
+}
+
+/* @utility shadow {
+  box-shadow:
+    -125px 156px 56px #0000,
+    -80px 100px 51px #00000003,
+    -45px 56px 43px #00000008,
+    -20px 25px 32px #0000000a,
+    -5px 6px 17px #0000000d;
+} */
+
+.stretched-link {
+  @apply after:absolute after:inset-0;
+}
+
+/* aos animation */
+[data-aos="fade-up-sm"] {
+  transform: translate3d(0, 20px, 0);
+}
+
+[data-aos="fade-down-sm"] {
+  transform: translate3d(0, -20px, 0);
+}
+
+[data-aos="fade-left-sm"] {
+  transform: translate3d(-15px, 0, 0);
+}
+
+[data-aos="fade-right-sm"] {
+  transform: translate3d(15px, 0, 0);
+}
+
+[data-aos="zoom-in-sm"] {
+  transform: translateZ(0) scale(0.95);
+}
+
+[data-aos="zoom-out-sm"] {
+  transform: translateZ(0) scale(1.05);
+}

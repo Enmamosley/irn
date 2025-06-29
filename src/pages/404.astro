@@ -1,0 +1,65 @@
+---
+import ImageMod from "@/components/ImageMod.astro";
+import config from "@/config/config.json";
+import Base from "@/layouts/Base.astro";
+import {
+  getLangFromUrl,
+  getTranslations,
+  slugSelector,
+  supportedLang,
+} from "@/lib/utils/languageParser";
+import { markdownify } from "@/lib/utils/textConverter";
+import Button from "@/shortcodes/Button";
+import type { ContentEntryMap } from "astro:content";
+
+export function getStaticPaths() {
+  const paths = supportedLang.map((lang) => ({
+    params: { lang: lang || undefined },
+  }));
+  return paths;
+}
+
+let lang = getLangFromUrl(Astro.url);
+
+const disabledLanguages = config.settings.disable_languages as string[];
+if (disabledLanguages.includes(lang)) {
+  lang = config.settings.default_language;
+}
+
+const { page_not_found_content, page_not_found, back_to_home } =
+  await getTranslations(lang as keyof ContentEntryMap);
+---
+
+<Base title="Page Not Found">
+  <section class="section">
+    <div class="container md:w-3/4 lg:1/2 w-full">
+      <div class="row justify-center items-center">
+        <div class="col-12 lg:col-6" data-aos="fade-right-sm">
+          <ImageMod
+            class="mx-auto"
+            src="/images/404.svg"
+            alt="404"
+            width={494}
+            height={460}
+            format="svg"
+          />
+        </div>
+        <div class="col-12 lg:col-6">
+          <h1
+            set:html={markdownify(page_not_found)}
+            class="text-[32px] md:text-[48px] lg:text-[64px] mb-6"
+            data-aos="fade-left-sm"
+          />
+          <p
+            set:html={markdownify(page_not_found_content)}
+            class="text-lg mb-10"
+            data-aos="fade-left-sm"
+          />
+          <div data-aos="fade-left-sm">
+            <Button label={back_to_home} link={slugSelector("/", lang)} icon />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

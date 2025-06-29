@@ -1,0 +1,66 @@
+---
+import ImageMod from "@/components/ImageMod.astro";
+import Base from "@/layouts/Base.astro";
+import { getSinglePage } from "@/lib/contentParser.astro";
+import { supportedLang } from "@/lib/utils/languageParser";
+import { markdownify } from "@/lib/utils/textConverter";
+import type { ContentEntryMap } from "astro:content";
+import { render } from "astro:content";
+
+export async function getStaticPaths() {
+  const paths = await Promise.all(
+    supportedLang.map(async (lang) => {
+      const posts = await getSinglePage("blog", lang as keyof ContentEntryMap);
+
+      return posts.map((post) => ({
+        params: {
+          lang: lang || undefined,
+          single: post.id.split("/").pop(),
+        },
+        props: {
+          post,
+        },
+      }));
+    })
+  );
+  return paths.flat();
+}
+
+const { post } = Astro.props;
+const { title, meta_title, description, image } = post.data;
+const { Content } = await render(post);
+---
+
+<Base title={title} meta_title={meta_title} description={description}>
+  <section class="section">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          <h1
+            set:html={markdownify(title)}
+            class="text-center text-balance mb-14 text-[32px] md:text-[48px] lg:text-[64px]"
+            data-aos="fade-up-sm"
+          />
+
+          {
+            image && (
+              <div data-aos="fade-up-sm">
+                <ImageMod
+                  src={image}
+                  alt={title}
+                  class="mb-16 mx-auto aspect-video object-cover rounded-2xl"
+                  width={1021}
+                  height={552}
+                />
+              </div>
+            )
+          }
+
+          <div class="content lg:px-[10%]" data-aos="fade-up-sm">
+            <Content />
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</Base>

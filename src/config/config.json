@@ -1,0 +1,46 @@
+{
+  "site": {
+    "title": "IRN HOSTING",
+    "base_url": "https://irnhosting.com",
+    "base_path": "/",
+    "trailing_slash": true,
+    "favicon": "/images/favicon.png",
+    "logo": "/images/logo.svg",
+    "logo_width": "131",
+    "logo_height": "36",
+    "logo_text": "IRN"
+  },
+
+  "settings": {
+    "sticky_header": false,
+    "default_theme": "system",
+    "pagination": 2,
+    "summary_length": 200,
+    "blog_folder": "blog",
+    "default_language": "es",
+    "disable_languages": [],
+    "default_language_in_subdir": false
+  },
+
+  "params": {
+    "contact_form_action": "#",
+    "copyright": "Copyright © 2025 [MOSLEY](https://mosley.mx/). All Rights Reserved"
+  },
+
+  "announcement_bar": {
+    "enable": true,
+    "text": "Get free account only for today, and get your money with referral code"
+  },
+
+  "navigation_button": {
+    "enable": true,
+    "label": "Get PREMIUM HOSTING",
+    "link": "https://irnhosting.com/pricing"
+  },
+
+  "metadata": {
+    "meta_author": "Enmanoell Mosley",
+    "meta_image": "/images/og-image.png",
+    "meta_description": "Sitio para irn hosting"
+  }
+}

@@ -1,0 +1,119 @@
+---
+import Counter from "@/helpers/Counter";
+import { getLangFromUrl, slugSelector } from "@/lib/utils/languageParser";
+import { markdownify } from "@/lib/utils/textConverter";
+import Button from "@/shortcodes/Button";
+import ImageMod from "../ImageMod.astro";
+
+const lang = getLangFromUrl(Astro.url);
+
+const { trust } = Astro.props;
+---
+
+<div class="relative bg-primary overflow-hidden">
+  <ImageMod
+    src="/images/homepage/patternBg.png"
+    alt="pattern"
+    class="absolute top-0 left-0 z-10 object-cover w-full h-full"
+    width={0}
+    height={0}
+  />
+  <div
+    class="absolute flex-none w-[440px] h-[769px] left-[calc(45.62500000000002%-220px)] top-14 bg-gradient-to-r from-[#ffe74b] to-[rgb(255,231,75)] rounded-[769px] blur-[100px] opacity-15 z-1 overflow-visible rotate-[35deg]"
+  >
+  </div>
+  <section class="section relative z-20">
+    <div class="container">
+      <h2
+        set:html={markdownify(trust.title)}
+        class="text-center text-text-light mb-6"
+        data-aos="fade-up-sm"
+      />
+      <p
+        set:html={markdownify(trust.content)}
+        class="text-center text-text-light lg:w-1/2 mx-auto mb-14"
+        data-aos="fade-up-sm"
+      />
+
+      <div class="row justify-center gy-4">
+        {
+          trust.stats.map((stat: any, i: number) => (
+            <div class="col-12 lg:col-10 xl:col-9">
+              <div
+                class="overflow-hidden rounded-[20px]"
+                data-aos="fade-up-sm"
+                data-aos-delay={i * 100}
+              >
+                <div class="flex flex-col md:flex-row lg:items-center justify-between bg-body">
+                  <div class="md:w-[63%] p-8">
+                    <ImageMod
+                      src={stat.company}
+                      alt="company logo"
+                      width={152}
+                      height={40}
+                      format="svg"
+                      class="mb-7"
+                    />
+                    <p
+                      set:html={markdownify(stat.comment)}
+                      class="mb-7 text-xl before:content-['“'] after:content-['”']"
+                    />
+                    <div class="flex items-center gap-3">
+                      <ImageMod
+                        src={stat.author}
+                        alt="author"
+                        width={48}
+                        height={48}
+                        format="webp"
+                      />
+                      <div>
+                        <p
+                          set:html={markdownify(stat.name)}
+                          class="font-medium text-lg"
+                        />
+                        <p
+                          set:html={markdownify(stat.designation)}
+                          class="text-sm"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="md:w-[32%] bg-light px-12 py-6">
+                    <div class="flex flex-col gap-4">
+                      {stat.numbers.map((n: any) => (
+                        <div class="flex flex-col max-md:items-center">
+                          <p class="font-medium text-primary text-[3rem] lg:text-[4rem]">
+                            <Counter
+                              count={n.value}
+                              duration={5}
+                              suffix={n.suffix}
+                              client:load
+                            />
+                          </p>
+                          <p
+                            set:html={markdownify(n.subtitle)}
+                            class="text-lg text-text/60"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+      {
+        trust.button && (
+          <div data-aos="fade-up-sm" class="mt-6 w-full flex justify-center">
+            <Button
+              link={slugSelector(trust.button.link, lang)}
+              label={trust.button.label}
+            />
+          </div>
+        )
+      }
+    </div>
+  </section>
+</div>

@@ -1,0 +1,80 @@
+---
+import Card from "@/components/Card.astro";
+import ImageMod from "@/components/ImageMod.astro";
+import Base from "@/layouts/Base.astro";
+import { getListPage } from "@/lib/contentParser.astro";
+import dateFormat from "@/lib/utils/dateFormat";
+import { supportedLang } from "@/lib/utils/languageParser";
+import { markdownify } from "@/lib/utils/textConverter";
+import type { ContentEntryMap } from "astro:content";
+
+export function getStaticPaths() {
+  const paths = supportedLang.map((lang) => ({
+    params: { lang: lang || undefined },
+  }));
+  return paths;
+}
+
+const { lang } = Astro.params;
+const changelog = await getListPage("changelog", lang as keyof ContentEntryMap);
+const { title, meta_title, description, content, logs } = changelog[0].data;
+---
+
+<Base title={title} meta_title={meta_title} description={description}>
+  <section class="section">
+    <div class="container lg:1/2 xl:w-full">
+      <div class="row justify-center g-4">
+        <div class="col-12">
+          <h1
+            set:html={markdownify(title)}
+            class="text-center text-[32px] md:text-[48px] lg:text-[64px] mb-6"
+            data-aos="fade-up-sm"
+          />
+          <p
+            set:html={markdownify(content)}
+            class="text-center lg:w-1/2 mx-auto mb-14"
+            data-aos="fade-up-sm"
+          />
+        </div>
+
+        {
+          logs.map((log: any, index: number) => (
+            <div
+              class="col-12 md:col-6 lg:col-4 min-h-full"
+              data-aos="fade-up-sm"
+              data-aos-delay={50 + index * 100}
+            >
+              <div class="border border-border rounded-2xl flex flex-col justify-between h-full">
+                <div>
+                  <Card className="h-[386px] !rounded-2xl bg-light">
+                    <div
+                      class="flex justify-center items-center w-auto p-10 md:p-20 !min-h-full md:h-full"
+                      data-aos="zoom-in-sm"
+                    >
+                      <ImageMod
+                        src={log.image}
+                        alt={log.version}
+                        width={0}
+                        height={0}
+                        class="object-contain image-card relative z-10"
+                      />
+                    </div>
+                  </Card>
+
+                  <div class="p-6">
+                    <h4 set:html={markdownify(log.version)} class="mb-3" />
+                    <p
+                      set:html={markdownify(log.note)}
+                      class="text-text-gray"
+                    />
+                  </div>
+                </div>
+                <p class="p-6 pt-0 text-text-gray">{dateFormat(log.date)}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,83 @@
+---
+import { getLangFromUrl, slugSelector } from "@/lib/utils/languageParser";
+import { markdownify } from "@/lib/utils/textConverter";
+import type { CollectionEntry } from "astro:content";
+import ImageMod from "../ImageMod.astro";
+import ThreeDot from "../ThreeDot.astro";
+import TitleBg from "../TitleBg.astro";
+type Props = {
+  hero: CollectionEntry<"homepage">["data"]["hero"];
+};
+
+const lang = getLangFromUrl(Astro.url);
+const { hero } = Astro.props;
+---
+
+<div class="relative overflow-hidden">
+  <section class="section">
+    <div class="container md:w-3/4 lg:1/2 xl:w-full">
+      <div class="row g-5 justify-center items-center">
+        <div class="col-12 lg:col-8 xl:col-6" data-aos="fade-up-sm">
+          <ThreeDot className="mb-6 max-md:justify-center" />
+          <h1
+            set:html={markdownify(hero.title)}
+            class="mb-6 max-md:text-center"
+          />
+          <p
+            set:html={markdownify(hero.content)}
+            class="mb-10 text-xl max-md:text-center"
+          />
+          <div class="flex items-center flex-col md:flex-row gap-4">
+            {
+              hero.buttons.map((button, i: number) => (
+                <a
+                  href={slugSelector(button.link, lang)}
+                  class={`btn w-fit ${i % 2 === 0 ? "btn-primary" : "btn-ghost"}`}
+                  data-aos="fade-down-sm"
+                >
+                  {button.label}
+                </a>
+              ))
+            }
+          </div>
+        </div>
+        <div class="col-12 xl:col-6" data-aos="zoom-out-sm">
+          <div>
+            <ImageMod
+              src={hero.images[0]}
+              alt="hero"
+              width={0}
+              height={0}
+              class="mx-auto xl:scale-125"
+              format="webp"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <TitleBg />
+  <div
+    class="border-y border-border backdrop-blur-[80px] w-full"
+    data-aos="fade-up-sm"
+  >
+    <div
+      class="flex max-md:flex-wrap justify-center items-center mx-auto md:w-3/4 lg:1/2 xl:w-full"
+    >
+      {
+        hero.client_logos.map((item: any) => (
+          <div class="max-md:w-1/2 md:first:border-l md:border-r md:border-border px-4 xl:px-7 py-6 xl:py-9">
+            <ImageMod
+              class="mx-auto grayscale opacity-50"
+              src={item}
+              alt="hero"
+              width={179}
+              height={48}
+              format="webp"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>

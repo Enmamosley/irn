@@ -1,0 +1,112 @@
+---
+import { markdownify } from "@/lib/utils/textConverter";
+import { TfiArrowRight } from "react-icons/tfi";
+import Card from "../Card.astro";
+import ImageMod from "../ImageMod.astro";
+
+const { benefit } = Astro.props;
+---
+
+<section class="section pb-0">
+  <div class="container md:w-3/4 lg:1/2 xl:w-full">
+    <div class="row justify-center">
+      <div class="col-12">
+        <h2
+          set:html={markdownify(benefit.title)}
+          class="text-center mb-6"
+          data-aos="fade-up-sm"
+        />
+        <p
+          set:html={markdownify(benefit.content)}
+          class="text-center lg:w-1/2 mx-auto mb-14"
+          data-aos="fade-up-sm"
+        />
+      </div>
+
+      <div class="col-12">
+        <div class="row g-4 justify-center">
+          {
+            benefit.benefits.map((b: any, i: number) => (
+              <div
+                class={`col-12 xl:col-6 min-h-full ${benefit.benefits.length - 1 === i && "hidden"}`}
+                data-aos="fade-up-sm"
+                data-aos-delay={`${50 + i * 100}`}
+              >
+                <Card className="bg-light h-full">
+                  <div class="mx-auto w-fit flex flex-col relative z-10 pt-20 pb-11 px-5">
+                    <ImageMod
+                      src={b.image}
+                      alt={b.title}
+                      width={336}
+                      height={441}
+                      class="image-card mb-10"
+                      format="webp"
+                    />
+
+                    <div>
+                      <h4 set:html={markdownify(b.title)} class="mb-2" />
+                      <p set:html={markdownify(b.title)} />
+                    </div>
+                  </div>
+                </Card>
+              </div>
+            ))
+          }
+
+          <div class="col-12">
+            <div class="bg-light rounded-[2rem]" data-aos="fade-up-sm">
+              <div
+                class="flex flex-col xl:flex-row items-center gap-11 pt-20 pb-11 px-5 md:px-20 md:py-14"
+              >
+                <ImageMod
+                  src={benefit.benefits[benefit.benefits.length - 1].image}
+                  alt="img"
+                  width={499}
+                  height={437}
+                  format="webp"
+                  data-aos="zoom-in"
+                />
+
+                <div>
+                  <h3
+                    set:html={markdownify(
+                      benefit.benefits[benefit.benefits.length - 1].title
+                    )}
+                    class="mb-6"
+                    data-aos="fade-up"
+                  />
+                  <p
+                    set:html={markdownify(
+                      benefit.benefits[benefit.benefits.length - 1].content
+                    )}
+                    class="mb-10 text-lg"
+                    data-aos="fade-up"
+                  />
+                  {
+                    benefit.benefits[benefit.benefits.length - 1].points && (
+                      <ul class="list-disc list-inside">
+                        {benefit.benefits[
+                          benefit.benefits.length - 1
+                        ].points.map((p: any) => (
+                          <li
+                            class="mb-4 last:mb-0 flex items-center font-medium text-xl"
+                            data-aos="fade-up"
+                          >
+                            <span class="mr-2 inline-block p-1.5 border border-text text-primary rounded-full">
+                              <TfiArrowRight />
+                            </span>
+                            {p}
+                          </li>
+                        ))}
+                      </ul>
+                    )
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
