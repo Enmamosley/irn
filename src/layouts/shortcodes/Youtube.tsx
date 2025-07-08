@@ -1,5 +1,5 @@
-import React from "react";
-import LiteYouTubeEmbed from "react-lite-youtube-embed";
+// @ts-ignore
+import LiteYouTubeEmbed from "react-lite-youtube-embed/dist/LiteYouTubeEmbed";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 
 const Youtube = ({
