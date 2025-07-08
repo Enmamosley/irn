@@ -12,73 +12,81 @@ pricing_tab:
 
 pricing_card:
   - title: "Personal"
-    content: "El Plan Personal está diseñado para personas o equipos medianos que necesitan funciones avanzadas y escalabilidad."
+    content: "El Plan Personal está diseñado para personas que necesitan alojamiento simple para un sitio web, sin complicaciones."
     price:
-      free: true
-      custom: "FREE"
+      free: false
+      custom: "20"
       currency: "$"
-      monthly_price: 0
-      yearly_price: 0
+      monthly_price: 5
+      yearly_price: 20
     featured: false
     button:
       enable: true
       label: "Comenzar"
       link: "/contact"
     service:
-      title: "Todo en el plan Básico, más"
+      title: "Todas las funciones incluidas"
       points:
-        - "Funciones avanzadas para gestionar presupuestos, informes, etc."
-        - "Escalabilidad para adaptarse a las finanzas personales."
+        - "Hasta 1 sitio web"
+        - "10gb de almacenamiento SSD"
+        - "1 Buzón de correo de 10gb"
   - title: "Startup"
-    content: "El Plan Startup está diseñado para startups o equipos medianos que necesitan funciones avanzadas y escalabilidad."
+    content: "El Plan Startup está diseñado para startups o equipos medianos que necesitan  multiples sitios."
     price:
       free: false
       currency: "$"
-      monthly_price: 48
-      yearly_price: 128
+      monthly_price: 8
+      yearly_price: 60
     featured: false
     button:
       enable: true
       label: "Elegir plan"
       link: "/contact"
     service:
-      title: "Todo en el plan Básico, más"
+      title: "Todas las funciones incluidas"
       points:
-        - "Escalabilidad para adaptarse a equipos medianos."
-        - "Programación de salarios y atención médica de tus empleados."
+        - "Hasta 10 sitios web"
+        - "100gb de almacenamiento SSD"
+        - "50 Buzpnes de correo de 10gb"
   - title: "Empresa"
-    content: "Nuestro Plan Empresa es ideal para organizaciones más grandes que buscan soluciones integrales para sus equipos."
+    content: "Nuestro Plan Empresa es ideal para organizaciones más grandes que buscan soluciones altamente eficientes."
     price:
       free: false
       currency: "$"
       monthly_price: 40
-      yearly_price: 140
+      yearly_price: 260
     featured: true
     button:
       enable: true
       label: "Elegir plan"
       link: "/contact"
     service:
-      title: "Todo en el plan Básico, más"
+      title: "Todas las funciones incluidas"
       points:
-        - "Todo en el plan Startup y puedes planificar los objetivos anuales de la empresa."
-        - "Soluciones personalizadas para organizaciones más grandes."
-  - title: "Enterprise"
-    content: "El Plan Enterprise está diseñado para empresas o equipos medianos que necesitan funciones avanzadas."
+        - "Sitios web ilimitados"
+        - "Almacenamiento ilimitado"
+        - "Buzones de correo ilimtados de 10gb"
+        - " Más poder de procesamiento"
+        - "Soporte prioritario"
+  - title: "Agency"
+    content: "El Plan Agency está diseñado para agencias que necesitan tener un panel de control por cliente dentro de la misma cuenta."
     price:
-      free: true
-      custom: "CUSTOM"
+      free: false
+      custom: ""
       currency: "$"
-      monthly_price: 0
-      yearly_price: 0
+      monthly_price: 30
+      yearly_price: 280
     featured: false
     button:
       enable: true
       label: "Contactar Ventas"
       link: "/contact"
     service:
-      title: "Todo en el plan Básico, más"
+      title: "Todas las funciones incluidas"
       points:
-        - "Puedes agregar los servicios que necesitas para tu empresa."
-        - "Sé nuestro servicio prioritario y recibe las actualizaciones primero."
+        - "Hasta 25 paquetes"
+        - "Sitios web ilimitados en cada paquete "
+        - "Almacenamiento ilimitado SSD en cada paquete"
+        - "Buzones de correo ilimtados de 10gb en cada paquete"
+        - "Soporte prioritario"
 ---

@@ -1,13 +1,14 @@
 ---
-title: "Sapick"
+title: "IRN HOSTING"
 description: "Esta es la página de inicio"
-meta_title: "Página de inicio de Sapick"
+meta_title: "Página de inicio de IRN HOSTING"
 hero:
-  title: "Toma el control de tus finanzas con facilidad"
-  content: "Aprende a hacer crecer tu riqueza con potentes análisis, perspectivas personalizadas y planificación financiera optimizada."
+  title: "Hosting todo en uno"
+  content: "Alojamiento de alto rendimiento para agencias, comercio electrónico, empresas y pequeños negocios.
+            Velocidad y fiabilidad inigualables, además de soporte experto."
   buttons:
     - enable: true
-      label: "Comienza Gratis"
+      label: "Inciai desde $1"
       link: "/pricing"
     - enable: true
       label: "Ver Nuestros Precios"
@@ -25,26 +26,26 @@ hero:
     - "/images/homepage/clients/5.svg"
 
 feature:
-  - title: "Desbloquea herramientas poderosas para gestionar tus finanzas"
-    content: "Nuestra plataforma ofrece información detallada y análisis fáciles de entender que te ayudan a tomar mejores decisiones."
+  - title: "Ultrarrápido y de alta disponibilidad"
+    content: "Ofrezca tiempos de carga ultrarrápidos a sus clientes con nuestro exclusivo alojamiento en la nube con escalado automático. Diseñado para máxima velocidad, gestiona grandes volúmenes de tráfico sin esfuerzo y sin ralentizarse"
     images:
       - "/images/homepage/feature/1.png"
       - "/images/homepage/feature/2.png"
       - "/images/homepage/feature/3.png"
     features:
-      - "Planifica mejor con datos en tiempo real."
-      - "Alcanza tus metas más rápido con seguimiento detallado."
+      - "Plataforma en la nube con escalado automático"
+      - "Sin límites de LVE"
     button:
       enable: true
       label: "Saber Más"
       link: "/features"
-  - title: "Envía y transfiere dinero a cualquier banco o billetera al instante"
-    content: "Nuestro sistema ofrece datos en tiempo real e informes accionables, permitiéndote tomar decisiones empresariales informadas."
+  - title: "Correos empresariales con dominio personalizado"
+    content: "Disfruta de un correo profesional seguro y fiable con almacenamiento escalable de hasta 100 GB, protección SPF y DKIM, escaneo antivirus a nivel de red, migraciones ilimitadas sin interrupciones e interfaz web moderna con compatibilidad IMAP/SMTP/POP3."
     images:
       - "/images/homepage/feature/4.png"
     features:
-      - "Optimiza los planes con datos en vivo"
-      - "Estrategiza con perspectivas en tiempo real"
+      - "Libre de SPAM"
+      - "Entrega y recepción segura"
     button:
       enable: true
       label: "Saber Más"

@@ -1,8 +1,8 @@
 {
-  "name": "sapick-astro",
+  "name": "IRN-astro",
   "version": "2.1.0",
-  "description": "Astro and Tailwindcss SAAS Theme",
-  "author": "Themefisher",
+  "description": "irn hosting website",
+  "author": "Enmanoell Mosley <",
   "license": "UNLICENSED",
   "packageManager": "yarn@1.22.22",
   "private": "true",

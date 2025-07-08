@@ -6,8 +6,8 @@
     "trailing_slash": true,
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.svg",
-    "logo_width": "131",
-    "logo_height": "36",
+    "logo_width": "145",
+    "logo_height": "49",
     "logo_text": "IRN"
   },
 
@@ -24,7 +24,7 @@
 
   "params": {
     "contact_form_action": "#",
-    "copyright": "Copyright © 2025 [MOSLEY](https://mosley.mx/). All Rights Reserved"
+    "copyright": "Copyright © 2025 [IRN HOSTING LLC](https://irnhosting.com/). All Rights Reserved | Crafted by [Mosley](https://mosley.mx/)"
   },
 
   "announcement_bar": {
