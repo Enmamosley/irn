@@ -12,13 +12,13 @@ pricing_tab:
 
 pricing_card:
   - title: "Personal"
-    content: "El Plan Personal está diseñado para personas que necesitan alojamiento simple para un sitio web, sin complicaciones."
+    content: "Ideal para personas que necesitan alojamiento simple para un sitio web, sin complicaciones."
     price:
       free: false
-      custom: "20"
+      custom: "36"
       currency: "$"
       monthly_price: 5
-      yearly_price: 20
+      yearly_price: 36
     featured: false
     button:
       enable: true
@@ -30,13 +30,14 @@ pricing_card:
         - "Hasta 1 sitio web"
         - "10gb de almacenamiento SSD"
         - "1 Buzón de correo de 10gb"
+        - "Dominio.com incluido en planes Anuales"
   - title: "Startup"
     content: "El Plan Startup está diseñado para startups o equipos medianos que necesitan  multiples sitios."
     price:
       free: false
       currency: "$"
-      monthly_price: 8
-      yearly_price: 60
+      monthly_price: 8.75
+      yearly_price: 84
     featured: false
     button:
       enable: true
@@ -45,16 +46,17 @@ pricing_card:
     service:
       title: "Todas las funciones incluidas"
       points:
-        - "Hasta 10 sitios web"
+        - "Hasta 15 sitios web"
         - "100gb de almacenamiento SSD"
-        - "50 Buzpnes de correo de 10gb"
+        - "50 Buzones de correo de 10gb"
+        - "Dominio.com incluido en planes Anuales"
   - title: "Empresa"
-    content: "Nuestro Plan Empresa es ideal para organizaciones más grandes que buscan soluciones altamente eficientes."
+    content: "Ideal para organizaciones más grandes que buscan soluciones altamente eficientes."
     price:
       free: false
       currency: "$"
-      monthly_price: 40
-      yearly_price: 260
+      monthly_price: 25
+      yearly_price: 240
     featured: true
     button:
       enable: true
@@ -68,18 +70,19 @@ pricing_card:
         - "Buzones de correo ilimtados de 10gb"
         - " Más poder de procesamiento"
         - "Soporte prioritario"
+        - "Dominio.com incluido en planes Anuales"
   - title: "Agency"
-    content: "El Plan Agency está diseñado para agencias que necesitan tener un panel de control por cliente dentro de la misma cuenta."
+    content: "Ideal si necesitas tener un panel de control por cliente dentro de la misma cuenta."
     price:
       free: false
       custom: ""
       currency: "$"
-      monthly_price: 30
-      yearly_price: 280
+      monthly_price: 37.50
+      yearly_price: 360
     featured: false
     button:
       enable: true
-      label: "Contactar Ventas"
+      label: "Elegir Plan"
       link: "/contact"
     service:
       title: "Todas las funciones incluidas"

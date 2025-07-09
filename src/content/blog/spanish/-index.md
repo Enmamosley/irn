@@ -1,8 +1,8 @@
 ---
-title: "Publicaciones de Blog"
-meta_title: ""
-description: "Esta es la descripción meta"
+title: "Blog de IRN Hosting"
+meta_title: "Blog | IRN Hosting"
+description: "Artículos, tutoriales y noticias sobre alojamiento en la nube, rendimiento web y seguridad con IRN Hosting."
 hero:
-  title: "Perspectivas y Actualizaciones"
-  content: "En el panorama financiero de hoy, en constante evolución, la gestión eficaz de las finanzas se ha vuelto más crucial que nunca."
+  title: "Perspectivas y Novedades"
+  content: "Mantente al día con las últimas tendencias en hosting en la nube, optimización de sitios web y seguridad. Lee consejos, casos de éxito y actualizaciones directamente de nuestro equipo de expertos."
 ---

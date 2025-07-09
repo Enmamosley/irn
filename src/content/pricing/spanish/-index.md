@@ -1,78 +1,88 @@
 ---
 title: "Precios"
 meta_title: "Este es el plan de precios"
-description: "Esta es la descripción meta"
+description: "Elige el plan que se adapta a tu negocio"
 
 pricing_plans:
   title: "Compara nuestros planes"
-  subtitle: "Compara entre nuestros planes de precios"
+  subtitle: "Compara nuestros planes de hosting"
 
   plans:
-    - name: "Plan Gratis"
-    - name: "Plan Básico"
-    - name: "Plan Profesional"
+    - name: "Personal"
+    - name: "Startup"
+    - name: "Empresa"
+    - name: "Agency"
 
   categories:
     - name: "Descripción general"
       features:
-        - name: "Características básicas"
-          tooltip: true
-          values: [true, true, true]
-        - name: "Usuarios"
-          tooltip: true
-          values: ["10", "20", "Ilimitado"]
-        - name: "Datos individuales"
-          tooltip: true
-          values: ["20GB", "40GB", "Ilimitado"]
-        - name: "Soporte"
-          tooltip: true
-          values: [true, true, true]
-        - name: "Flujos de trabajo automatizados"
-          tooltip: true
-          values: [false, true, true]
-        - name: "200+ integraciones"
-          tooltip: true
-          values: [false, true, true]
+        - name: "Sitios web"
+          tooltip: false
+          values: ["1", "15", "Ilimitados", "Ilimitados"]
+        - name: "Almacenamiento SSD"
+          tooltip: false
+          values: ["10 GB", "100 GB", "Ilimitado", "Ilimitado"]
+        - name: "Cuentas de correo"
+          tooltip: false
+          values: ["1 × 10 GB", "50 × 10 GB", "Ilimitadas", "Ilimitadas"]
+        - name: "Dominio .com incluido (anual)"
+          tooltip: false
+          values: [false, true, true, true]
+        - name: "Paquetes"
+          tooltip: false
+          values: ["1", "1", "1", false]
 
-    - name: "Informes y análisis"
+    - name: "Precios"
       features:
-        - name: "Análisis"
-          tooltip: true
-          values: ["Básico", "Avanzado", "Avanzado"]
-        - name: "Informes exportables"
-          tooltip: true
-          values: [true, true, true]
-        - name: "Informes programados"
-          tooltip: true
-          values: [true, true, true]
-        - name: "Acceso a la API"
-          tooltip: true
-          values: [false, true, true]
-        - name: "Informes avanzados"
-          tooltip: true
-          values: [false, true, true]
-        - name: "Informes guardados"
-          tooltip: true
-          values: [false, true, true]
-        - name: "Propiedades del cliente"
-          tooltip: true
-          values: [false, false, true]
-        - name: "Campos personalizados"
-          tooltip: true
-          values: [false, false, true]
+        - name: "Precio mensual"
+          tooltip: false
+          values: ["$5", "$8.75", "$25", "$37.50"]
+        - name: "Precio anual"
+          tooltip: false
+          values: ["$36", "$84", "$240", "$360"]
 
-    - name: "Acceso de usuario"
+    - name: "Características adicionales"
       features:
-        - name: "Autenticación SSO/SAML"
-          tooltip: true
-          values: [true, true, true]
-        - name: "Permisos avanzados"
-          tooltip: true
-          values: [false, true, true]
-        - name: "Registro de auditoría"
-          tooltip: true
-          values: [false, false, true]
-        - name: "Historial de datos"
-          tooltip: true
-          values: [false, false, true]
+        - name: "Autoscaling en la nube (sin límites LVE)"
+          tooltip: false
+          values: [true, true, true, true]
+        - name: "CDN global & Edge Caching"
+          tooltip: false
+          values: [true, true, true, true]
+        - name: "SSL gratuito (Wildcard SSL)"
+          tooltip: false
+          values: [true, true, true, true]
+        - name: "Protección DDoS & WAF"
+          tooltip: false
+          values: [true, true, true, true]
+        - name: "Backups automáticos y restauración con un clic"
+          tooltip: false
+          values: [true, true, true, true]
+        - name: "Escaneo de malware diario"
+          tooltip: false
+          values: [true, true, true, true]
+        - name: "80+ instalaciones con 1 clic"
+          tooltip: false
+          values: [true, true, true, true]
+        - name: "Autenticación de dos factores (2FA)"
+          tooltip: false
+          values: [true, true, true, true]
+        - name: "SLA 99.99 % de uptime garantizado"
+          tooltip: false
+          values: [true, true, true, true]
+        - name: "100 % hosting verde"
+          tooltip: false
+          values: [true, true, true, true]
+        - name: "Soporte 24/7"
+          tooltip: false
+          values: [true, true, true, true]
+        - name: "Migraciones ilimitadas"
+          tooltip: false
+          values: [true, true, true, true]
+        - name: "Panel de control StackCP"
+          tooltip: false
+          values: [true, true, true, true]
+        - name: "Soporte prioritario"
+          tooltip: false
+          values: [false, false, true, true]
 ---

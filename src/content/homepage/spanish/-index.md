@@ -1,17 +1,16 @@
 ---
 title: "IRN HOSTING"
-description: "Esta es la página de inicio"
-meta_title: "Página de inicio de IRN HOSTING"
+description: "Alojamiento en la nube de alto rendimiento, seguro y escalable para todo tipo de proyectos."
+meta_title: "Inicio | IRN Hosting"
 hero:
   title: "Hosting todo en uno"
-  content: "Alojamiento de alto rendimiento para agencias, comercio electrónico, empresas y pequeños negocios.
-            Velocidad y fiabilidad inigualables, además de soporte experto."
+  content: "Potente alojamiento en la nube con autoscaling, CDN global y seguridad empresarial. Ideal para agencias, comercio electrónico, pymes y desarrolladores. Rendimiento, fiabilidad y soporte experto 24/7."
   buttons:
     - enable: true
-      label: "Inciai desde $1"
+      label: "Inicia desde $1/mes"
       link: "/pricing"
     - enable: true
-      label: "Ver Nuestros Precios"
+      label: "Ver planes y precios"
       link: "/pricing"
   images:
     - "/images/homepage/hero.png"
@@ -26,72 +25,74 @@ hero:
     - "/images/homepage/clients/5.svg"
 
 feature:
-  - title: "Ultrarrápido y de alta disponibilidad"
-    content: "Ofrezca tiempos de carga ultrarrápidos a sus clientes con nuestro exclusivo alojamiento en la nube con escalado automático. Diseñado para máxima velocidad, gestiona grandes volúmenes de tráfico sin esfuerzo y sin ralentizarse"
+  - title: "Autoscaling Cloud Hosting"
+    content: "Nuestra plataforma ajusta recursos automáticamente en tiempo real, garantizando velocidades ultrarrápidas y alta disponibilidad incluso durante picos de tráfico. Sin límites de LVE y con infraestructura redundante con 99.99 % de uptime."
     images:
       - "/images/homepage/feature/1.png"
       - "/images/homepage/feature/2.png"
       - "/images/homepage/feature/3.png"
     features:
-      - "Plataforma en la nube con escalado automático"
-      - "Sin límites de LVE"
+      - "Escalado automático inteligente"
+      - "99.99 % de uptime garantizado"
     button:
       enable: true
-      label: "Saber Más"
+      label: "Saber más"
       link: "/features"
-  - title: "Correos empresariales con dominio personalizado"
-    content: "Disfruta de un correo profesional seguro y fiable con almacenamiento escalable de hasta 100 GB, protección SPF y DKIM, escaneo antivirus a nivel de red, migraciones ilimitadas sin interrupciones e interfaz web moderna con compatibilidad IMAP/SMTP/POP3."
+
+  - title: "Panel de control StackCP"
+    content: "Gestiona sitios web, correo, dominios y seguridad con StackCP. Despliega aplicaciones con un solo clic, realiza migraciones ilimitadas sin downtime y accede a herramientas para desarrolladores como Git integrado y cron jobs ilimitados."
     images:
       - "/images/homepage/feature/4.png"
     features:
-      - "Libre de SPAM"
-      - "Entrega y recepción segura"
+      - "Migraciones automatizadas sin interrupciones"
+      - "Integración Git y cron jobs ilimitados"
     button:
       enable: true
-      label: "Saber Más"
+      label: "Saber más"
       link: "/features"
-  - title: "Rastrea cada informe individualmente para un mejor análisis de datos"
-    content: "Nuestra solución ofrece análisis completos, permitiéndote seguir el rendimiento fácilmente y tomar decisiones más inteligentes."
+
+  - title: "Seguridad y cumplimiento"
+    content: "Protege tu negocio con WAF personalizado, defensa DDoS de nivel empresarial, escaneo de malware y certificados SSL Wildcard gratuitos. Nuestros datacenters cumplen con PCI e ISO27001 y ofrecemos autenticación de dos factores."
     images:
       - "/images/homepage/feature/5.png"
     features:
-      - "Toma decisiones con datos actuales"
-      - "Datos en tiempo real para movimientos más inteligentes"
+      - "Firewall de aplicaciones web (WAF)"
+      - "Certificados SSL Wildcard gratis"
     button:
       enable: true
-      label: "Saber Más"
+      label: "Saber más"
       link: "/features"
 
 video:
-  title: "Ve cómo Fintech ayuda en tu vida diaria"
-  content: "Descubre cómo fintech simplifica las tareas diarias, desde gestionar finanzas hasta realizar pagos seguros e instantáneos. Con aplicaciones fáciles de usar, puedes presupuestar, invertir y hacer un seguimiento de los gastos con solo unos pocos toques."
+  title: "Descubre IRN Hosting en acción"
+  content: "Conoce cómo IRN Hosting impulsa tu presencia online con demostraciones de rendimiento, escalabilidad y seguridad, todo manejado desde un único panel intuitivo."
   video:
     cover: "/images/home/video/video-cover.png"
     link: "/images/home/video/video.mp4"
   stats:
-    - key: "Usuarios Activos"
-      value: 340
-      suffix: "K"
-    - key: "Transacción Mensual de Fintch"
-      value: 1.5
-      prefix: "$"
-      suffix: "M+"
-    - key: "Socios de la Empresa"
-      value: 170
-      suffix: "+"
-    - key: "Aplicaciones Descargadas"
-      value: 560
+    - key: "Sitios alojados"
+      value: 10
       suffix: "K+"
+    - key: "Cuentas de correo"
+      value: 100
+      suffix: "K+"
+    - key: "Uptime garantizado"
+      value: 99.99
+      suffix: "%"
+    - key: "Soporte 24/7"
+      value: 24
+      suffix: "/7"
+
 reason:
-  title: "Razones por las que <br> debes obtener <br> Finaco hoy"
+  title: "Razones para elegir IRN Hosting hoy"
   points:
-    - title: "Sapick para tus herramientas de presupuesto"
-      content: "Realiza un seguimiento automático de tus ingresos y gastos, ayudándote a crear presupuestos personalizados y mantenerte al tanto de tus metas financieras."
+    - title: "Rendimiento máximo"
+      content: "Servidores de alta frecuencia con CPUs de última generación, 100 % SSD en RAID 10 y red troncal de 40 Gbps, más CDN global para cargas instantáneas desde cualquier lugar."
       image: "/images/homepage/reasons/1.png"
-    - title: "Para todos tus pagos digitales"
-      content: "Envía dinero o paga facturas de manera fácil en tiempo real, asegurando transacciones seguras sin la necesidad de dinero en efectivo."
+    - title: "Correo empresarial premium"
+      content: "Bandejas de hasta 100 GB, protocolos IMAP/SMTP/POP3, SPF, DKIM, escaneo antivirus a nivel de red y migraciones ilimitadas sin interrupciones."
       image: "/images/homepage/reasons/2.png"
-    - title: "Una solución para tus finanzas e inversiones"
-      content: "Accede a una amplia gama de opciones de inversión como acciones, fondos mutuos y criptomonedas, todo a través de una plataforma fácil de usar."
+    - title: "Soporte y seguridad integrales"
+      content: "Protección DDoS de 1 Tbps, WAF, auditorías PCI e ISO27001, autenticación de dos factores y equipo de soporte experto disponible 24/7."
       image: "/images/homepage/reasons/3.png"
 ---

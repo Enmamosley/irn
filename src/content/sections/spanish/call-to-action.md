@@ -1,7 +1,7 @@
 ---
-title: "¿Listo para gestionar tus finanzas fácilmente?"
+title: "¿Listo para potencia tu sitio web?"
 button:
   enable: true
-  label: "Comienza gratis"
+  label: "Garantia de 30 dias"
   link: "/contact"
 ---

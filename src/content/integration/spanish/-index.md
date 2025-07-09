@@ -1,73 +1,72 @@
 ---
-title: "Integración"
-meta_title: "Este es el título meta"
-description: "Esta es la descripción meta"
+title: "Integraciones"
+meta_title: "Integraciones | IRN Hosting"
+description: "Conecta tu hosting con las aplicaciones y herramientas más populares para potenciar tu sitio."
 hero:
-  title: "Conéctate con más de 100 herramientas"
-  content: "Sapick se integra perfectamente con más de 100 herramientas populares, haciendo la gestión financiera más eficiente y fluida."
-
+  title: "Conéctate con más de 80 aplicaciones"
+  content: "Desde CMS como WordPress y Joomla! hasta despliegues desde Git, IRN Hosting se integra con las herramientas que ya usas."
 integrations:
-  - app: "SkyBolt"
-    icon: "/images/integration/5.svg"
-    content: "SkyBolt es una plataforma de colaboración en equipo potente que facilita la comunicación y el intercambio de archivos."
+  - app: "WordPress"
+    icon: "/images/integration/wordpress.svg"
+    content: "Instalación con un clic, staging integrado y actualizaciones automáticas de núcleo, temas y plugins."
     button:
       enable: true
-      label: "Saber Más"
-      link: "/about"
-  - app: "QuantumNest"
-    icon: "/images/integration/3.svg"
-    content: "QuantumNest es una plataforma de colaboración en equipo potente que mejora la comunicación y el intercambio de archivos."
+      label: "Guía de integración"
+      link: "/integration/wordpress"
+  - app: "Joomla!"
+    icon: "/images/integration/joomla.svg"
+    content: "Despliegue instantáneo con nuestro instalador de un clic y gestión de extensiones desde StackCP."
     button:
       enable: true
-      label: "Saber Más"
-      link: "/about"
-  - app: "EchoGrid"
-    icon: "/images/integration/8.svg"
-    content: "EchoGrid es una plataforma de colaboración en equipo avanzada que facilita la comunicación eficiente."
+      label: "Guía de integración"
+      link: "/integration/joomla"
+  - app: "Magento"
+    icon: "/images/integration/magento.svg"
+    content: "Plataforma optimizada con Redis y Elasticsearch, diseñada para e-commerce de alto rendimiento."
     button:
       enable: true
-      label: "Saber Más"
-      link: "/about"
-  - app: "EchoGrid"
-    icon: "/images/integration/9.svg"
-    content: "CyberNova es una herramienta poderosa para la colaboración en equipo, mejorando la comunicación y el intercambio de archivos."
+      label: "Guía de integración"
+      link: "/integration/magento"
+  - app: "PrestaShop"
+    icon: "/images/integration/prestashop.svg"
+    content: "Hosting gestionado para PrestaShop con caché automático y CDN global gratuito."
     button:
       enable: true
-      label: "Saber Más"
-      link: "/about"
-  - app: "Zypherix"
-    icon: "/images/integration/1.svg"
-    content: "Zypherix es una plataforma avanzada que optimiza la comunicación y la colaboración en equipo."
+      label: "Guía de integración"
+      link: "/integration/prestashop"
+  - app: "OpenCart"
+    icon: "/images/integration/opencart.svg"
+    content: "Instala OpenCart con un solo clic y aprovecha un entorno optimizado para tiendas pequeñas y medianas."
     button:
       enable: true
-      label: "Saber Más"
-      link: "/about"
-  - app: "StratosLink"
-    icon: "/images/integration/7.svg"
-    content: "StratosLink es una solución innovadora para mejorar la colaboración y la comunicación en equipos."
+      label: "Guía de integración"
+      link: "/integration/opencart"
+  - app: "Git"
+    icon: "/images/integration/git.svg"
+    content: "Despliega directamente desde tus repositorios Git para flujos CI/CD de forma sencilla."
     button:
       enable: true
-      label: "Saber Más"
-      link: "/about"
-  - app: "VortexSync"
-    icon: "/images/integration/2.svg"
-    content: "VortexSync es una plataforma que permite una colaboración fluida y una comunicación efectiva entre equipos."
+      label: "Guía de integración"
+      link: "/integration/git"
+  - app: "SSH & SFTP"
+    icon: "/images/integration/ssh.svg"
+    content: "Acceso seguro por SSH y SFTP para gestionar servidores y transferir archivos de forma confiable."
     button:
       enable: true
-      label: "Saber Más"
-      link: "/about"
-  - app: "LumeonHub"
-    icon: "/images/integration/6.svg"
-    content: "LumeonHub es una plataforma de colaboración en equipo con herramientas avanzadas de comunicación y gestión de archivos."
+      label: "Guía de integración"
+      link: "/integration/ssh"
+  - app: "Cron Jobs"
+    icon: "/images/integration/cron.svg"
+    content: "Programa tareas automatizadas sin límites de frecuencia para mantener tu sitio optimizado."
     button:
       enable: true
-      label: "Saber Más"
-      link: "/about"
-  - app: "NebulaLink"
-    icon: "/images/integration/4.svg"
-    content: "NebulaLink es una solución de colaboración en equipo diseñada para facilitar la comunicación y la gestión de tareas."
+      label: "Guía de integración"
+      link: "/integration/cron"
+  - app: "phpMyAdmin"
+    icon: "/images/integration/phpmyadmin.svg"
+    content: "Gestiona tus bases de datos MySQL con phpMyAdmin integrado o mediante conexiones remotas seguras."
     button:
       enable: true
-      label: "Saber Más"
-      link: "/about"
+      label: "Guía de integración"
+      link: "/integration/phpmyadmin"
 ---

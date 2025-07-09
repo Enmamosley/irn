@@ -1,94 +1,94 @@
 ---
 title: "Características"
-meta_title: "Esta es la página de características"
-description: "Esta es una descripción"
+meta_title: "Página de características de IRN Hosting"
+description: "Descubre las funcionalidades y ventajas de IRN Hosting para tu sitio web."
 hero:
-  title: "Tu solución de pago todo en uno"
-  content: "Obtén valiosos conocimientos con nuestras analíticas fáciles de usar, diseñadas para ayudarte a optimizar tus estrategias y mejorar los resultados."
+  title: "Soluciones de hosting confiables y escalables"
+  content: "Eleva tu presencia online con infraestructura de alto rendimiento, 100% green hosting y soporte experto."
   features:
-    - button: "Gestión Inteligente de Presupuestos"
-      title: "Gestiona tu presupuesto con nuestra solución de IA inteligente."
-      content: "Realiza un seguimiento automático de tus ingresos y gastos, ayudándote a crear presupuestos personalizados y alcanzar tus objetivos financieros."
+    - button: "Hosting Web"
+      title: "Web Hosting Autoscalable"
+      content: "Recursos ajustables en tiempo real, sin límites LVE y CDN global con edge caching."
       image: "/images/features/1.png"
       link:
         enable: true
         label: "Saber Más"
-        link: "#"
-    - button: "Pago Totalmente Digital"
-      title: "Envía y transfiere dinero a cualquier banco o billetera al instante"
-      content: "Nuestra plataforma ofrece conocimientos detallados y analíticas fáciles de entender que te ayudan a tomar mejores decisiones."
+        link: "#web-hosting"
+    - button: "WordPress Hosting"
+      title: "WordPress de Alto Rendimiento"
+      content: "Staging gratuito, StackCache™ y actualizaciones automáticas para tu sitio WordPress."
       image: "/images/features/2.png"
       link:
         enable: true
         label: "Saber Más"
-        link: "#"
-    - button: "Informes Dinámicos"
-      title: "Rastrea cada informe individualmente para un mejor análisis de datos"
-      content: "Nuestra plataforma proporciona conocimientos detallados y analíticas fáciles de entender que te ayudan a tomar mejores decisiones."
+        link: "#wordpress-hosting"
+    - button: "Email Hosting"
+      title: "Correo Profesional Seguro"
+      content: "Hasta 10 GB de almacenamiento, SPF, DKIM y antivirus a nivel de red."
       image: "/images/features/3.png"
       link:
         enable: true
         label: "Saber Más"
-        link: "#"
+        link: "#email-hosting"
 
 benefit:
-  title: "Más beneficios que obtienes"
-  content: "Nuestro sistema ofrece datos en tiempo real e informes accionables, permitiéndote tomar decisiones empresariales informadas."
+  title: "Más beneficios de IRN Hosting"
+  content: "Experimenta rendimiento, seguridad y facilidad de gestión con nuestras soluciones avanzadas."
   benefits:
-    - title: "Analítica de productos"
-      content: "Tableros visuales que muestran métricas de productividad individuales y de equipo."
+    - title: "Panel de Control Unificado"
+      content: "StackCP para gestionar sitios, correos, DNS, bases de datos y más desde una sola interfaz."
       image: "/images/features/4.png"
-    - title: "Analítica financiera"
-      content: "Nuestra solución ofrece analíticas completas."
+    - title: "Backups Automáticos"
+      content: "Copias diarias con restauración en un clic para mayor tranquilidad."
       image: "/images/features/5.png"
-    - title: "Envía y transfiere dinero a cualquier banco o billetera al instante"
-      content: "Nuestra plataforma ofrece conocimientos detallados y analíticas intuitivas, permitiéndote tomar decisiones bien informadas."
+    - title: "Migraciones Ilimitadas"
+      content: "Traslada tus sitios y correos gratis y sin interrupciones."
       image: "/images/features/7.png"
       points:
-        - "Mejora la eficiencia con automatización."
-        - "Impulsa el crecimiento con conocimientos accionables."
+        - "Sin downtime"
+        - "Soporte dedicado en cada migración"
 
 trust:
-  title: "Confiado por más de 15,000 clientes"
-  content: "Obtén valiosos conocimientos con nuestras analíticas fáciles de usar, diseñadas para ayudarte a optimizar tus estrategias y mejorar los resultados."
+  title: "Confiado por más de 10,000 clientes"
+  content: "Únete a miles de usuarios que ya disfrutan de nuestra infraestructura robusta y ecológica."
   stats:
     - company: "/images/testimonial/11.svg"
-      comment: "Confiable y digno de confianza. Han ganado mi confianza y lealtad. Esta empresa ha demostrado constantemente confiabilidad y honestidad."
+      comment: "La migración fue instantánea y sin caídas. ¡Soporte 24/7 que responde de verdad!"
       author: "/images/avatar/7.png"
-      name: "Henry Arthur"
-      designation: "Fundador, Neitzsche"
+      name: "Aitor López"
+      designation: "CEO, TechStart"
       numbers:
         - suffix: "%"
-          value: 58
-          subtitle: "Crecimiento en 3 meses"
+          value: 99.99
+          subtitle: "Uptime Garantizado"
         - suffix: "k"
-          value: 132
-          subtitle: "Usuarios Activos"
+          value: 10
+          subtitle: "Clientes Satisfechos"
     - company: "/images/testimonial/9.svg"
-      comment: "Confiable y creíble. Han ganado mi confianza y lealtad. Esta empresa demuestra constantemente confiabilidad e integridad."
+      comment: "Nuestro e-commerce nunca ha tenido un tiempo de carga tan bajo. Impresionante."
       author: "/images/avatar/6.png"
-      name: "Jane Smith"
-      designation: "Directora de Marketing"
+      name: "Lucía Morales"
+      designation: "Bloguera Profesional"
       numbers:
-        - suffix: "%"
-          value: 49
-          subtitle: "Crecimiento en 3 meses"
-        - suffix: "k"
-          value: 395
-          subtitle: "Usuarios Activos"
+        - suffix: "ms"
+          value: 200
+          subtitle: "Tiempo de Carga Medio"
+        - suffix: "GB"
+          value: 100
+          subtitle: "Almacenamiento de Email"
   button:
     enable: true
-    label: "Get it for free"
+    label: "Ver Planes"
     link: "/pricing"
 
 more:
-  title: "Más beneficios que obtienes"
-  content: "Aquí tienes un eslogan llamativo que apoya el encabezado anterior mientras agrega un poco más de información."
+  title: "Todo lo que necesitas en un solo lugar"
+  content: "Infraestructura de vanguardia con eficiencia y sostenibilidad para tu proyecto."
   points:
     - icon: "FaCube"
-      details: "Haz un impacto con el aspecto ultra-inteligente de Basko"
+      details: "Autoscaling en tiempo real para picos de tráfico"
     - icon: "FaDatabase"
-      details: "Todo lo que necesitas para crear sitios web impactantes"
+      details: "Seguridad avanzada: WAF, DDoS, SSL y escaneo de malware"
     - icon: "FaDisplay"
-      details: "Basko viene con el diseño completo en Figma"
+      details: "100 % hosting verde con energía renovable"
 ---

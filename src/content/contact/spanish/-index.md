@@ -1,16 +1,16 @@
 ---
 title: "Contacto"
-meta_title: ""
-description: "esta es una meta descripción"
+meta_title: "Contacto | IRN Hosting"
+description: "¿Tienes dudas o necesitas soporte? Nuestro equipo de expertos de IRN Hosting está listo para ayudarte."
 draft: false
 hero:
   title: "Ponte en Contacto"
-  content: "Nuestro software inteligente proporciona información en tiempo real, automatiza tareas tediosas y te ayuda a tomar decisiones financieras informadas, todo desde una interfaz intuitiva."
+  content: "¿Tienes preguntas sobre nuestros planes de hosting, migraciones o soporte técnico? Escríbenos, llámanos o visítanos: estamos disponibles 24/7 para ayudarte a impulsar tu proyecto en la nube."
 contact:
-  - name: "hello@calentask.app"
+  - name: "soporte@irnhosting.com"
     icon: "FaRegEnvelopeOpen"
-  - name: "+91 783 837 098"
+  - name: "+52 81 1234 5678"
     icon: "FaPhoneVolume"
-  - name: "Avenida Marquis Street, EE.UU."
+  - name: "Av. Tecnológico 123, Monterrey, México"
     icon: "FaLocationDot"
 ---
