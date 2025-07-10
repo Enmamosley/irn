@@ -21,7 +21,7 @@ hero:
     - "/images/homepage/clients/1.svg"
     - "/images/homepage/clients/2.svg"
     - "/images/homepage/clients/3.svg"
-    - "/images/homepage/clients/4.svg"
+    - "/images/homepage/clients/WPCLI.svg"
     - "/images/homepage/clients/5.svg"
 
 feature:
