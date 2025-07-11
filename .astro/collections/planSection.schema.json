@@ -1,0 +1,150 @@
+{
+  "$ref": "#/definitions/planSection",
+  "definitions": {
+    "planSection": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "pricing_tab": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "badge": {
+                "type": "object",
+                "properties": {
+                  "enable": {
+                    "type": "boolean",
+                    "default": false
+                  },
+                  "label": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "label"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "label",
+              "type"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "pricing_card": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              },
+              "price": {
+                "type": "object",
+                "properties": {
+                  "free": {
+                    "type": "boolean"
+                  },
+                  "custom": {
+                    "type": "string"
+                  },
+                  "currency": {
+                    "type": "string"
+                  },
+                  "monthly_price": {
+                    "type": "number"
+                  },
+                  "yearly_price": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "free",
+                  "currency",
+                  "monthly_price",
+                  "yearly_price"
+                ],
+                "additionalProperties": false
+              },
+              "featured": {
+                "type": "boolean"
+              },
+              "button": {
+                "type": "object",
+                "properties": {
+                  "enable": {
+                    "type": "boolean",
+                    "default": true
+                  },
+                  "label": {
+                    "type": "string"
+                  },
+                  "link": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "label",
+                  "link"
+                ],
+                "additionalProperties": false
+              },
+              "service": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "points": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "title",
+                  "points"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "title",
+              "content",
+              "price",
+              "featured",
+              "button",
+              "service"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "pricing_tab",
+        "pricing_card"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
